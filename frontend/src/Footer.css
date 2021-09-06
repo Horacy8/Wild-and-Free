@@ -1,0 +1,63 @@
+.footer {
+  margin-top: 3rem;
+  width: 100%;
+  padding: 2.5rem 1rem;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: normal;
+}
+
+.footer__nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__section--information {
+  margin-right: 0.5rem;
+}
+
+.footer__section--find-us {
+  margin-left: 0.5rem;
+}
+
+.footer__section h6 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.footer__section ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__section ul li {
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer__section--find-us ul {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer__section--find-us ul li {
+  padding: 0.2rem;
+}
+
+.footer__section ul li a {
+  padding: 0.3rem;
+  color: #fff;
+}
+
+.footer__social-image {
+  font-size: 1.3rem;
+}
