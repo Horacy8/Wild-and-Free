@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* BANER */
+
+.main__baner {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 80vh;
+  width: 100%;
+}
+
+.main__baner img {
+  height: 100%;
+}
+
+.main__baner-text,
+.main__baner-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main__baner-text {
+  color: #fff;
+}
+
+.main__baner-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 60%;
+}
+
+.main__baner-btn a {
+  padding: 0.5rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* NOWOŚCI */
+
+.main__news {
+  max-width: 1300px;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__news-text {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.main__news-text::before,
+.main__news-text::after {
+  content: "";
+  position: absolute;
+}

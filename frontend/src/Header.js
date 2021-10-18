@@ -52,10 +52,13 @@ function Header() {
                   <Link to="/collection/dress">Sukienki</Link>
                 </li>
                 <li className="header-nav__dropdown-item">
-                  <Link to="/collection/skirt">Spódnice</Link>
+                  <Link to="/collection/skirt">Bluzy</Link>
                 </li>
                 <li className="header-nav__dropdown-item">
-                  <Link to="/collection/tshirt">Bluzki</Link>
+                  <Link to="/collection/tshirt">Spodnie</Link>
+                </li>
+                <li className="header-nav__dropdown-item">
+                  <Link to="/collection/tshirt">Spódnice</Link>
                 </li>
               </ul>
             </li>
@@ -79,7 +82,7 @@ function Header() {
       </nav>
 
       <div className="header__logo">
-        <Link to="/">Narave</Link>
+        <Link to="/">NARAVE</Link>
       </div>
 
       <div className="header__option">

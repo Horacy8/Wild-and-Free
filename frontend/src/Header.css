@@ -103,11 +103,6 @@
   display: block;
 }
 
-/* .header-nav__dropdown-item {
-  padding: 1rem 0;
-  border-bottom: 1px solid #555;
-} */
-
 .header-nav__dropdown-item a {
   display: block;
   width: 100%;
@@ -169,6 +164,7 @@
 
 .header__basket-dropdown {
   opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 3rem;
   right: 0;
@@ -185,6 +181,7 @@
 
 .header__basket-dropdown.active {
   opacity: 1;
+  visibility: visible;
   z-index: 100;
 }
 
