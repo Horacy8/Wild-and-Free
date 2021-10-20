@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import data from "../data";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { detailsProduct } from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import "./ProductScreen.css";
 
 function ProductScreen(props) {
-  const product = data.products.find((x) => x._id === props.match.params.id);
+  const dispatch = useDispatch();
+  const productId = props.match.params.id;
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
 
   const [descriptionDropdown, setDescriptionDropdown] = useState(false);
   const dropdownDescription = () =>
@@ -12,107 +18,121 @@ function ProductScreen(props) {
   const [deliveryDropdown, setDeliveryDropdown] = useState(false);
   const dropdownDelivery = () => setDeliveryDropdown(!deliveryDropdown);
 
+  useEffect(() => {
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId]);
+
   return (
-    <div className="product-screen">
-      <div className="product-screen__col-1">
-        <img
-          className="product-screen__img"
-          src={product.image}
-          alt={product.name}
-        />
-      </div>
-      <div className="product-screen__col-2">
-        <ul className="product-screen__list">
-          <li>
-            <h2 className="product-screen__name">{product.name}</h2>
-          </li>
-          <li>
-            <span className="product-screen__price">{product.price} zł</span>
-          </li>
-          <li className="product-screen__color">
-            <span>Kolor:</span>
-            <ul>
+    <>
+      {loading ? (
+        <LoadingBox />
+      ) : error ? (
+        <MessageBox>{error}</MessageBox>
+      ) : (
+        <div className="product-screen">
+          <div className="product-screen__col-1">
+            <img
+              className="product-screen__img"
+              src={product.image}
+              alt={product.name}
+            />
+          </div>
+          <div className="product-screen__col-2">
+            <ul className="product-screen__list">
               <li>
-                <div className="product-screen__color-option"></div>
+                <h2 className="product-screen__name">{product.name}</h2>
               </li>
               <li>
-                <div className="product-screen__color-option"></div>
+                <span className="product-screen__price">
+                  {product.price} zł
+                </span>
+              </li>
+              <li className="product-screen__color">
+                <span>Kolor:</span>
+                <ul>
+                  <li>
+                    <div className="product-screen__color-option"></div>
+                  </li>
+                  <li>
+                    <div className="product-screen__color-option"></div>
+                  </li>
+                  <li>
+                    <div className="product-screen__color-option"></div>
+                  </li>
+                </ul>
+              </li>
+              <li className="product-screen__size">
+                <span>Rozmiar:</span>
+                <ul>
+                  <li>
+                    <div className="product-screen__size-option">XS</div>
+                  </li>
+                  <li>
+                    <div className="product-screen__size-option">S/M</div>
+                  </li>
+                  <li>
+                    <div className="product-screen__size-option">L/XL</div>
+                  </li>
+                </ul>
               </li>
               <li>
-                <div className="product-screen__color-option"></div>
+                <div>
+                  {product.countInStock > 0 ? (
+                    <button className="product-screen__btn">Do Koszyka</button>
+                  ) : (
+                    <button className="product-screen__btn">
+                      Powiadom o dostępności
+                    </button>
+                  )}
+                </div>
+              </li>
+              <li className="product-screen__delivery">
+                <span onClick={dropdownDelivery}>
+                  Dostawa i Płatność
+                  <i
+                    className={
+                      deliveryDropdown
+                        ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
+                        : "fas fa-chevron-down product-screen__dropdown-icon"
+                    }
+                  ></i>
+                </span>
+                <p
+                  className={
+                    deliveryDropdown
+                      ? "product-screen__dropdown-delivery product-screen__dropdown-delivery--open"
+                      : "product-screen__dropdown-delivery"
+                  }
+                >
+                  {product.description}
+                </p>
+              </li>
+              <li className="product-screen__description">
+                <span onClick={dropdownDescription}>
+                  Opis Produktu wraz ze składem
+                  <i
+                    className={
+                      descriptionDropdown
+                        ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
+                        : "fas fa-chevron-down product-screen__dropdown-icon"
+                    }
+                  ></i>
+                </span>
+                <p
+                  className={
+                    descriptionDropdown
+                      ? "product-screen__dropdown-description product-screen__dropdown-description--open"
+                      : "product-screen__dropdown-description"
+                  }
+                >
+                  {product.description}
+                </p>
               </li>
             </ul>
-          </li>
-          <li className="product-screen__size">
-            <span>Rozmiar:</span>
-            <ul>
-              <li>
-                <div className="product-screen__size-option">XS</div>
-              </li>
-              <li>
-                <div className="product-screen__size-option">S/M</div>
-              </li>
-              <li>
-                <div className="product-screen__size-option">L/XL</div>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <div>
-              {product.countInStock > 0 ? (
-                <button className="product-screen__btn">Do Koszyka</button>
-              ) : (
-                <button className="product-screen__btn">
-                  Powiadom o dostępności
-                </button>
-              )}
-            </div>
-          </li>
-          <li className="product-screen__delivery">
-            <span onClick={dropdownDelivery}>
-              Dostawa i Płatność
-              <i
-                className={
-                  deliveryDropdown
-                    ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
-                    : "fas fa-chevron-down product-screen__dropdown-icon"
-                }
-              ></i>
-            </span>
-            <p
-              className={
-                deliveryDropdown
-                  ? "product-screen__dropdown-delivery product-screen__dropdown-delivery--open"
-                  : "product-screen__dropdown-delivery"
-              }
-            >
-              {product.description}
-            </p>
-          </li>
-          <li className="product-screen__description">
-            <span onClick={dropdownDescription}>
-              Opis Produktu wraz ze składem
-              <i
-                className={
-                  descriptionDropdown
-                    ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
-                    : "fas fa-chevron-down product-screen__dropdown-icon"
-                }
-              ></i>
-            </span>
-            <p
-              className={
-                descriptionDropdown
-                  ? "product-screen__dropdown-description product-screen__dropdown-description--open"
-                  : "product-screen__dropdown-description"
-              }
-            >
-              {product.description}
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

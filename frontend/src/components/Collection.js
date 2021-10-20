@@ -14,7 +14,7 @@ function Collection() {
   useEffect(() => {
     dispatch(listProducts());
     window.scroll(0, 0);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
