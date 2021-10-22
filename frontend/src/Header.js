@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -10,6 +11,9 @@ function Header() {
   const showSidebar = () => setSidebar(!sidebar);
   const dropdownMenu = () => setSidebarDtopdown(!sidebarDropdown);
   const showBasket = () => setBasketDropdown(!basketDropdown);
+
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
   return (
     <header className="header">
@@ -88,7 +92,9 @@ function Header() {
       <div className="header__option">
         <div className="header__basket" onClick={showBasket}>
           <i className="fas fa-shopping-bag"></i>
-          <span className="header__basket-count">1</span>
+          {cartItems.length > 0 && (
+            <span className="header__basket-count">{cartItems.length}</span>
+          )}
         </div>
         <div
           className={
