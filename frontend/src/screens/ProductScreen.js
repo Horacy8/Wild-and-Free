@@ -22,6 +22,10 @@ function ProductScreen(props) {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
 
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${productId}`);
+  };
+
   return (
     <>
       {loading ? (
@@ -78,7 +82,12 @@ function ProductScreen(props) {
               <li>
                 <div>
                   {product.countInStock > 0 ? (
-                    <button className="product-screen__btn">Do Koszyka</button>
+                    <button
+                      onClick={addToCartHandler}
+                      className="product-screen__btn"
+                    >
+                      Do Koszyka
+                    </button>
                   ) : (
                     <button className="product-screen__btn">
                       Powiadom o dostępności

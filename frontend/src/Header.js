@@ -104,7 +104,7 @@ function Header() {
               <span className="header__basket-summary--price">200,00$</span>
             </div>
             <button className="header__basket-btn">
-              <Link to="/checkout">Do koszyka</Link>
+              <Link to="/cart">Do koszyka</Link>
             </button>
           </div>
         </div>
