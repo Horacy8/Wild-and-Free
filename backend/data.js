@@ -1,7 +1,6 @@
 const data = {
   products: [
     {
-      _id: "1",
       name: "Wyczesana sukienka",
       category: "dress",
       image: "/img/dress1.jpg",
@@ -10,7 +9,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "2",
       name: "Klawa sukienka",
       category: "dress",
       image: "/img/dress2.jpg",
@@ -19,7 +17,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "3",
       name: "Jaha",
       category: "dress",
       image: "/img/dress3.jpg",
@@ -28,7 +25,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "4",
       name: "Na wprośki",
       category: "pants",
       image: "/img/pants1.jpg",
@@ -37,7 +33,6 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "5",
       name: "Bumela",
       category: "hoodie",
       image: "/img/hoodie1.jpg",
