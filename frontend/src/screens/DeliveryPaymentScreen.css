@@ -1,0 +1,67 @@
+.delivery-payment-screen {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.delivery-payment-screen__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+.delivery-payment-screen__delivery {
+  margin-bottom: 2rem;
+}
+
+.delivery-payment-screen__delivery > span,
+.delivery-payment-screen__payment > span {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.delivery-payment-screen__delivery-box,
+.delivery-payment-screen__payment-box {
+  background-color: #ddd;
+  padding: 0 1rem;
+}
+
+.delivery-payment-screen-span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.delivery-payment-screen-label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivery-payment-screen__delivery-parcel,
+.delivery-payment-screen__delivery-courier {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.delivery-payment-screen__delivery-parcel {
+  margin-bottom: 0.5rem;
+}
+
+.delivery-payment-screen__payment-account {
+  padding: 1rem 0;
+}
+
+.delivery-payment-screen__btn {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
