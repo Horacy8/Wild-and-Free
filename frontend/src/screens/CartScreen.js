@@ -24,7 +24,7 @@ function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    //checkout
+    props.history.push(`/shipping`);
   };
 
   const priceForAllProducts = cartItems.reduce(

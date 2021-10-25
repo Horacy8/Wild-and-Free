@@ -7,6 +7,7 @@ import Collection from "./components/Collection";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import NotFound from "./components/NotFound";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/collection" exact component={Collection} />
           <Route path="/product/:id" component={ProductScreen} />
           <Route path="/cart/:id?" component={CartScreen} />
+          <Route path="/shipping" component={ShippingAddressScreen} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
