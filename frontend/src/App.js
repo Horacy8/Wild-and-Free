@@ -9,6 +9,7 @@ import CartScreen from "./screens/CartScreen";
 import NotFound from "./components/NotFound";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import DeliveryPaymentScreen from "./screens/DeliveryPaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/shipping" component={ShippingAddressScreen} />
           <Route path="/payment" component={DeliveryPaymentScreen} />
+          <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
