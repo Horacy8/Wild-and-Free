@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import data from "./data.js";
+import orderRouter from "./routers/orderRouter.js";
 import productRouter from "./routers/productRouter.js";
 
 const app = express();
@@ -13,6 +13,7 @@ mongoose.connect(
 );
 
 app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
