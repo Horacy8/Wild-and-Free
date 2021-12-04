@@ -1,32 +1,32 @@
-.shipping-address-screen {
+.shipping-address-page {
   margin-top: 1.5rem;
   padding: 0 1rem;
 }
 
-.shipping-address-screen__title {
+.shipping-address-page__title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 1.5rem;
 }
 
-.shipping-address-screen__from-item {
+.shipping-address-page__from-item {
   display: flex;
   flex-direction: column;
 }
 
-.shipping-address-screen__from-item label {
+.shipping-address-page__from-item label {
   font-size: 0.9rem;
   margin: 0.5rem 0;
 }
 
-.shipping-address-screen__from-item input {
+.shipping-address-page__from-item input {
   font-size: 1rem;
   padding: 0.5rem 0.7rem;
   border: 1px solid #bbb;
 }
 
-.shipping-address-screen__btn {
+.shipping-address-page__btn {
   width: 100%;
   padding: 0.8rem 1.5rem;
   margin-top: 2rem;

@@ -1,29 +1,29 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import Collection from "./components/Collection";
-import ProductScreen from "./screens/ProductScreen";
-import CartScreen from "./screens/CartScreen";
-import NotFound from "./components/NotFound";
-import ShippingAddressScreen from "./screens/ShippingAddressScreen";
-import DeliveryPaymentScreen from "./screens/DeliveryPaymentScreen";
-import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+// import Header from "./inne/Header";
+import Main from "./pages/Main";
+import Footer from "./widgets/Footer/Footer";
+import CollectionPage from "./pages/CollectionPage";
+import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
+import NotFound from "./pages/NotFoundPage";
+import ShippingAddressPage from "./pages/ShippingAddressPage";
+import DeliveryPaymentPage from "./pages/DeliveryPaymentPage";
+import PlaceOrderPage from "./pages/PlaceOrderPage";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route path="/" exact component={Main} />
-          <Route path="/collection" exact component={Collection} />
-          <Route path="/product/:id" component={ProductScreen} />
-          <Route path="/cart/:id?" component={CartScreen} />
-          <Route path="/shipping" component={ShippingAddressScreen} />
-          <Route path="/payment" component={DeliveryPaymentScreen} />
-          <Route path="/placeorder" component={PlaceOrderScreen} />
+          <Route path="/collection" exact component={CollectionPage} />
+          <Route path="/product/:id" component={ProductPage} />
+          <Route path="/cart/:id?" component={CartPage} />
+          <Route path="/shipping" component={ShippingAddressPage} />
+          <Route path="/payment" component={DeliveryPaymentPage} />
+          <Route path="/placeorder" component={PlaceOrderPage} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

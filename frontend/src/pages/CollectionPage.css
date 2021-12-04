@@ -1,4 +1,4 @@
-.collection {
+.collection-page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -7,14 +7,14 @@
   max-width: 1920px;
 }
 
-.collection__title {
+.collection-page__title {
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
 }
 
-.collection__card {
+.collection-page__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,11 +22,11 @@
   margin: 1.5rem 1rem 1rem 1rem;
 }
 
-.collection__card-img {
+.collection-page__card-img {
   max-width: 24rem;
   width: 100%;
 }
 
-.collection__card-title {
+.collection-page__card-title {
   padding: 1rem;
 }

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { detailsProduct } from "../actions/productActions";
+import { detailsProduct } from "../redux/actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import "./ProductScreen.css";
+import "./ProductPage.css";
 
-function ProductScreen(props) {
+function ProductPage(props) {
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   const productDetails = useSelector((state) => state.productDetails);
@@ -33,49 +33,47 @@ function ProductScreen(props) {
       ) : error ? (
         <MessageBox>{error}</MessageBox>
       ) : (
-        <div className="product-screen">
-          <div className="product-screen__col-1">
+        <div className="product-page">
+          <div className="product-page__col-1">
             <img
-              className="product-screen__img"
+              className="product-page__img"
               src={product.image}
               alt={product.name}
             />
           </div>
-          <div className="product-screen__col-2">
-            <ul className="product-screen__list">
+          <div className="product-page__col-2">
+            <ul className="product-page__list">
               <li>
-                <h2 className="product-screen__name">{product.name}</h2>
+                <h2 className="product-page__name">{product.name}</h2>
               </li>
               <li>
-                <span className="product-screen__price">
-                  {product.price} zł
-                </span>
+                <span className="product-page__price">{product.price} zł</span>
               </li>
-              <li className="product-screen__color">
+              <li className="product-page__color">
                 <span>Kolor:</span>
                 <ul>
                   <li>
-                    <div className="product-screen__color-option"></div>
+                    <div className="product-page__color-option"></div>
                   </li>
                   <li>
-                    <div className="product-screen__color-option"></div>
+                    <div className="product-page__color-option"></div>
                   </li>
                   <li>
-                    <div className="product-screen__color-option"></div>
+                    <div className="product-page__color-option"></div>
                   </li>
                 </ul>
               </li>
-              <li className="product-screen__size">
+              <li className="product-page__size">
                 <span>Rozmiar:</span>
                 <ul>
                   <li>
-                    <div className="product-screen__size-option">XS</div>
+                    <div className="product-page__size-option">XS</div>
                   </li>
                   <li>
-                    <div className="product-screen__size-option">S/M</div>
+                    <div className="product-page__size-option">S/M</div>
                   </li>
                   <li>
-                    <div className="product-screen__size-option">L/XL</div>
+                    <div className="product-page__size-option">L/XL</div>
                   </li>
                 </ul>
               </li>
@@ -84,54 +82,54 @@ function ProductScreen(props) {
                   {product.countInStock > 0 ? (
                     <button
                       onClick={addToCartHandler}
-                      className="product-screen__btn"
+                      className="product-page__btn"
                     >
                       Do Koszyka
                     </button>
                   ) : (
-                    <button className="product-screen__btn">
+                    <button className="product-page__btn">
                       Powiadom o dostępności
                     </button>
                   )}
                 </div>
               </li>
-              <li className="product-screen__delivery">
+              <li className="product-page__delivery">
                 <span onClick={dropdownDelivery}>
                   Dostawa i Płatność
                   <i
                     className={
                       deliveryDropdown
-                        ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
-                        : "fas fa-chevron-down product-screen__dropdown-icon"
+                        ? "fas fa-chevron-down product-page__dropdown-icon product-page__dropdown-icon--rotate"
+                        : "fas fa-chevron-down product-page__dropdown-icon"
                     }
                   ></i>
                 </span>
                 <p
                   className={
                     deliveryDropdown
-                      ? "product-screen__dropdown-delivery product-screen__dropdown-delivery--open"
-                      : "product-screen__dropdown-delivery"
+                      ? "product-page__dropdown-delivery product-page__dropdown-delivery--open"
+                      : "product-page__dropdown-delivery"
                   }
                 >
                   {product.description}
                 </p>
               </li>
-              <li className="product-screen__description">
+              <li className="product-page__description">
                 <span onClick={dropdownDescription}>
                   Opis Produktu wraz ze składem
                   <i
                     className={
                       descriptionDropdown
-                        ? "fas fa-chevron-down product-screen__dropdown-icon product-screen__dropdown-icon--rotate"
-                        : "fas fa-chevron-down product-screen__dropdown-icon"
+                        ? "fas fa-chevron-down product-page__dropdown-icon product-page__dropdown-icon--rotate"
+                        : "fas fa-chevron-down product-page__dropdown-icon"
                     }
                   ></i>
                 </span>
                 <p
                   className={
                     descriptionDropdown
-                      ? "product-screen__dropdown-description product-screen__dropdown-description--open"
-                      : "product-screen__dropdown-description"
+                      ? "product-page__dropdown-description product-page__dropdown-description--open"
+                      : "product-page__dropdown-description"
                   }
                 >
                   {product.description}
@@ -145,4 +143,4 @@ function ProductScreen(props) {
   );
 }
 
-export default ProductScreen;
+export default ProductPage;

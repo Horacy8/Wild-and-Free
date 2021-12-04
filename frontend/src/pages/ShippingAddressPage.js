@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { saveShippingAddress } from "../actions/cartActions";
-import "./ShippingAddressScreen.css";
+import { saveShippingAddress } from "../redux/actions/cartActions";
+import "./ShippingAddressPage.css";
 
-function ShippingAddressScreen(props) {
+function ShippingAddressPage(props) {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
@@ -33,12 +33,12 @@ function ShippingAddressScreen(props) {
     props.history.push("/payment");
   };
   return (
-    <div className="shipping-address-screen">
+    <div className="shipping-address-page">
       <form className="" onSubmit={submitHandler}>
         <div>
-          <h1 className="shipping-address-screen__title">Adres Dostawy</h1>
+          <h1 className="shipping-address-page__title">Adres Dostawy</h1>
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="name">Imię</label>
           <input
             type="text"
@@ -48,7 +48,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="surname">Nazwisko</label>
           <input
             type="text"
@@ -58,7 +58,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="email">Email</label>
           <input
             type="text"
@@ -68,7 +68,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="phone">Telefon</label>
           <input
             type="text"
@@ -78,7 +78,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="address">Ulica i numer domu</label>
           <input
             type="text"
@@ -88,7 +88,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="city">Miasto</label>
           <input
             type="text"
@@ -98,7 +98,7 @@ function ShippingAddressScreen(props) {
             required
           />
         </div>
-        <div className="shipping-address-screen__from-item">
+        <div className="shipping-address-page__from-item">
           <label htmlFor="postal Code">Kod pocztowy</label>
           <input
             type="text"
@@ -110,7 +110,7 @@ function ShippingAddressScreen(props) {
         </div>
         <div>
           <label />
-          <button className="shipping-address-screen__btn" type="submit">
+          <button className="shipping-address-page__btn" type="submit">
             Przejdź dalej
           </button>
         </div>
@@ -119,4 +119,4 @@ function ShippingAddressScreen(props) {
   );
 }
 
-export default ShippingAddressScreen;
+export default ShippingAddressPage;

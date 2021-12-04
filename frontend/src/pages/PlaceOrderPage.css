@@ -1,19 +1,19 @@
-.place-order-screen {
+.place-order-page {
   margin-top: 1.5rem;
   padding: 0 1rem;
 }
 
-.place-order-screen__title {
+.place-order-page__title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 1.5rem;
 }
 
-.place-order-screen__li {
+.place-order-page__li {
   margin-bottom: 1rem;
 }
 
-.place-order-screen__li h4 {
+.place-order-page__li h4 {
   margin-bottom: 0.5rem;
 }

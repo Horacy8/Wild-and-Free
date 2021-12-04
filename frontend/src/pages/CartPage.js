@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, removeFromCart } from "../actions/cartActions";
-import "./CartScreen.css";
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
+import "./CartPage.css";
 
-function CartScreen(props) {
+function CartPage(props) {
   const productId = props.match.params.id;
 
   const cart = useSelector((state) => state.cart);
@@ -32,35 +32,35 @@ function CartScreen(props) {
     0
   );
   return (
-    <div className="cart-screen">
+    <div className="cart-page">
       {cartItems.length === 0 ? (
-        <div className="cart-screen__empty">
-          <i class="fas fa-shopping-bag cart-screen__empty-icon"></i>
-          <h3 className="cart-screen__empty-title">Twój koszyk jest pusty</h3>
-          <p className="cart-screen__empty-text">
+        <div className="cart-page__empty">
+          <i class="fas fa-shopping-bag cart-page__empty-icon"></i>
+          <h3 className="cart-page__empty-title">Twój koszyk jest pusty</h3>
+          <p className="cart-page__empty-text">
             Dodaj produkty do koszyka, aby złożyć zamówienie
           </p>
           <Link to="/collection">Zobacz kolekcję</Link>
         </div>
       ) : (
-        <ul className="cart-screen__columns">
-          <div className="cart-screen__col1">
-            <h2 className="cart-screen__title">Koszyk</h2>
-            <ul className="cart-screen__products">
+        <ul className="cart-page__columns">
+          <div className="cart-page__col1">
+            <h2 className="cart-page__title">Koszyk</h2>
+            <ul className="cart-page__products">
               {cartItems.map((item) => (
-                <li key={item.product} className="cart-screen__product">
-                  <div className="cart-screen__image">
+                <li key={item.product} className="cart-page__product">
+                  <div className="cart-page__image">
                     <Link to={`/product/${item.product}`}>
                       <img src={item.image} alt={item.name} />
                     </Link>
                   </div>
-                  <div className="cart-screen__description">
+                  <div className="cart-page__description">
                     <Link to={`/product/${item.product}`}>
-                      <h2 className="cart-screen__name">{item.name}</h2>
+                      <h2 className="cart-page__name">{item.name}</h2>
                     </Link>
-                    <h5 className="cart-screen__size">Rozmiar: One Size</h5>
+                    <h5 className="cart-page__size">Rozmiar: One Size</h5>
                   </div>
-                  <div className="cart-screen__quantity">
+                  <div className="cart-page__quantity">
                     <select
                       value={item.qty}
                       onChange={(e) =>
@@ -76,29 +76,29 @@ function CartScreen(props) {
                       ))}
                     </select>
                   </div>
-                  <div className="cart-screen__icon">
+                  <div className="cart-page__icon">
                     <i
                       className="fas fa-times"
                       onClick={() => removeFromCartHandler(item.product)}
                     ></i>
                   </div>
-                  <div className="cart-screen__price">
+                  <div className="cart-page__price">
                     <span>{item.price} zł</span>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="cart-screen__col2">
-            <div className="cart-screen__products-price">
+          <div className="cart-page__col2">
+            <div className="cart-page__products-price">
               <span>Wartość produktów:</span>
               <span>{priceForAllProducts},00 zł</span>
             </div>
-            <div className="cart-screen__delivery">
+            <div className="cart-page__delivery">
               <span>Koszt dostawy od:</span>
               <span>{priceForAllProducts > 400 ? "0,00 zł" : "+12,00 zł"}</span>
             </div>
-            <div className="cart-screen__subtotal">
+            <div className="cart-page__subtotal">
               <span>Razem:</span>
               <span>
                 {priceForAllProducts > 400
@@ -108,7 +108,7 @@ function CartScreen(props) {
               </span>
             </div>
             <button
-              className="cart-screen__btn"
+              className="cart-page__btn"
               onClick={checkoutHandler}
               disabled={cartItems.length === 0}
             >
@@ -121,4 +121,4 @@ function CartScreen(props) {
   );
 }
 
-export default CartScreen;
+export default CartPage;

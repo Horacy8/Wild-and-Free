@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { saveDeliveryPayment } from "../actions/cartActions";
-import "./DeliveryPaymentScreen.css";
+import { saveDeliveryPayment } from "../redux/actions/cartActions";
+import "./DeliveryPaymentPage.css";
 
-function DeliveryPaymentScreen(props) {
+function DeliveryPaymentPage(props) {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
   if (!shippingAddress.address) {
@@ -19,15 +19,15 @@ function DeliveryPaymentScreen(props) {
     props.history.push("/placeorder");
   };
   return (
-    <div className="delivery-payment-screen">
+    <div className="delivery-payment-page">
       <form onSubmit={submitHandler}>
         <div>
-          <h1 className="delivery-payment-screen__title">Dostawa i płatność</h1>
+          <h1 className="delivery-payment-page__title">Dostawa i płatność</h1>
         </div>
-        <div className="delivery-payment-screen__delivery">
+        <div className="delivery-payment-page__delivery">
           <span>Sposób dostawy:</span>
-          <div className="delivery-payment-screen__delivery-box">
-            <div className="delivery-payment-screen__delivery-parcel">
+          <div className="delivery-payment-page__delivery-box">
+            <div className="delivery-payment-page__delivery-parcel">
               <input
                 type="radio"
                 id="parcelLocker"
@@ -38,14 +38,14 @@ function DeliveryPaymentScreen(props) {
                 onClick={(e) => setDeliveryMethod(e.target.value)}
               />
               <label
-                className="delivery-payment-screen-label"
+                className="delivery-payment-page-label"
                 htmlFor="parcelLocker"
               >
                 Paczkomaty InPost{" "}
-                <span className="delivery-payment-screen-span">+14.00zł</span>
+                <span className="delivery-payment-page-span">+14.00zł</span>
               </label>
             </div>
-            <div className="delivery-payment-screen__delivery-courier">
+            <div className="delivery-payment-page__delivery-courier">
               <input
                 type="radio"
                 id="courier"
@@ -54,20 +54,17 @@ function DeliveryPaymentScreen(props) {
                 required
                 onClick={(e) => setDeliveryMethod(e.target.value)}
               />
-              <label
-                className="delivery-payment-screen-label"
-                htmlFor="courier"
-              >
+              <label className="delivery-payment-page-label" htmlFor="courier">
                 Kurier{" "}
-                <span className="delivery-payment-screen-span">+16.00zł</span>
+                <span className="delivery-payment-page-span">+16.00zł</span>
               </label>
             </div>
           </div>
         </div>
-        <div className="delivery-payment-screen__payment">
+        <div className="delivery-payment-page__payment">
           <span>Sposób płatności:</span>
-          <div className="delivery-payment-screen__payment-box">
-            <div className="delivery-payment-screen__payment-account">
+          <div className="delivery-payment-page__payment-box">
+            <div className="delivery-payment-page__payment-account">
               <input
                 type="radio"
                 id="accountPayment"
@@ -82,7 +79,7 @@ function DeliveryPaymentScreen(props) {
           </div>
         </div>
         <div>
-          <button className="delivery-payment-screen__btn" type="submit">
+          <button className="delivery-payment-page__btn" type="submit">
             Podsumowanie
           </button>
         </div>
@@ -91,4 +88,4 @@ function DeliveryPaymentScreen(props) {
   );
 }
 
-export default DeliveryPaymentScreen;
+export default DeliveryPaymentPage;

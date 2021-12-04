@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Product from "./Product";
-import "./Collection.css";
-import LoadingBox from "./LoadingBox";
-import MessageBox from "./MessageBox";
+import Product from "../components/Product";
+import "./CollectionPage.css";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../actions/productActions";
+import { listProducts } from "../redux/actions/productActions";
 
-function Collection() {
+function CollectionPage() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -23,8 +23,8 @@ function Collection() {
       ) : error ? (
         <MessageBox>{error}</MessageBox>
       ) : (
-        <div className="collection">
-          <h2 className="collection__title">Kolekcja</h2>
+        <div className="collection-page">
+          <h2 className="collection-page__title">Kolekcja</h2>
           {products.map((product) => (
             <Product key={product._id} product={product} />
           ))}
@@ -34,4 +34,4 @@ function Collection() {
   );
 }
 
-export default Collection;
+export default CollectionPage;
