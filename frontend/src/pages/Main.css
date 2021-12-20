@@ -8,66 +8,103 @@
 /* BANER */
 
 .main__baner {
+  position: relative;
   display: flex;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
-  height: 80vh;
   width: 100%;
+  margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .main__baner img {
-  height: 100%;
+  width: 100%;
 }
 
-.main__baner-text,
-.main__baner-btn {
+.main__baner a {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.main__baner-text {
-  color: #fff;
-}
-
-.main__baner-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  top: 60%;
-}
-
-.main__baner-btn a {
-  padding: 0.5rem 1.5rem;
-  background-color: #000;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-/* NOWOŚCI */
-
-.main__news {
-  max-width: 1300px;
-  margin-top: 3rem;
+.main__news,
+.main__ig {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-.main__news-text {
-  width: 100%;
-  font-size: 1rem;
-  font-weight: normal;
+.main__news {
+  margin-bottom: 5rem;
+}
+
+.main__header-text {
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-.main__news-text::before,
-.main__news-text::after {
-  content: "";
-  position: absolute;
+.main__header-text--h {
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-regular);
+  font-size: 1.8rem;
+}
+
+.main__header-text-span-left,
+.main__header-text-span-right {
+  height: 1px;
+  border-top: 1px solid #000;
+  width: 50%;
+}
+
+.main__header-text-span-left {
+  margin-right: 15px;
+}
+
+.main__header-text-span-right {
+  margin-left: 15px;
+}
+
+/* Slider */
+
+.mySwiper {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.swiper-slide {
+  width: 45%;
+}
+
+.main__product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__product-img,
+.main__instagram-img {
+  display: block;
+  width: 100%;
+}
+
+.main__product-name,
+.main__product-price {
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-light);
+  font-size: 1.2rem;
+}
+
+.main__product-name {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.main__product-price {
+  margin-top: 0.5rem;
 }

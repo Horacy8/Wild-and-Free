@@ -11,19 +11,19 @@ function Footer() {
             <h6>Informacje</h6>
             <ul>
               <li>
-                <Link to="/about">O nas</Link>
+                <Link to="/onas">O nas</Link>
               </li>
               <li>
                 <Link to="/regulamin">Regulamin</Link>
               </li>
               <li>
-                <Link to="regulamin">Polityka prywatności</Link>
+                <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
               </li>
               <li>
-                <Link to="/regulamin">Wymiana Zwrot i Reklamacja</Link>
+                <Link to="/zwrot">Wymiana Zwrot i Reklamacja</Link>
               </li>
               <li>
-                <Link to="/contact">Kontakt</Link>
+                <Link to="/kontakt">Kontakt</Link>
               </li>
             </ul>
           </li>
@@ -31,14 +31,14 @@ function Footer() {
             <h6>Dołącz do nas</h6>
             <ul>
               <li>
-                <Link to="/adres-na-fb">
+                <a href="https://www.facebook.com/NARAVEpl-101341795684552">
                   <i className="fab fa-facebook-square footer__social-image"></i>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/adres-na-ig">
+                <a href="https://www.instagram.com/narave_pl/">
                   <i className="fab fa-instagram footer__social-image"></i>
-                </Link>
+                </a>
               </li>
             </ul>
           </li>
