@@ -1,0 +1,8 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bag">
+<path id="vector" d="M4.61281 4.9H15.3872C15.7438 4.9 16.0511 5.15108 16.1221 5.50052L18.5121 17.2514C18.7642 18.4908 17.817 19.65 16.5523 19.65H3.44773C2.18298 19.65 1.23578 18.4908 1.48785 17.2514L3.87786 5.50052C3.94893 5.15108 4.25622 4.9 4.61281 4.9Z" stroke="black" stroke-width="0.5"/>
+<path id="holder" d="M7 6.2V3.4311C7 2.20439 7.74685 1.10126 8.88583 0.64567V0.64567C9.60106 0.359576 10.3989 0.359576 11.1142 0.64567V0.64567C12.2531 1.10126 13 2.20439 13 3.4311V6.2" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
+<circle id="ellipseLeft" cx="7" cy="6.85" r="0.75" fill="black"/>
+<circle id="ellipseRight " cx="13" cy="6.85" r="0.75" fill="black"/>
+</g>
+</svg>
