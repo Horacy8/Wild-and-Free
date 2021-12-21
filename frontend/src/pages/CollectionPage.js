@@ -1,36 +1,59 @@
-import React, { useEffect } from "react";
-import Product from "../components/Product";
+import React from "react";
+import { Link } from "react-router-dom";
+import data from "../data";
 import "./CollectionPage.css";
-import LoadingBox from "../components/LoadingBox";
-import MessageBox from "../components/MessageBox";
-import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../redux/actions/productActions";
 
-function CollectionPage() {
-  const dispatch = useDispatch();
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+function CollectionPage(props) {
+  const products = data.products.filter((item) => {
+    let productList = item.category === props.match.params.category;
+    return productList;
+  });
+  console.log(products);
 
-  useEffect(() => {
-    dispatch(listProducts());
-    window.scroll(0, 0);
-  }, [dispatch]);
+  let categoryName = "";
+  switch (props.match.params.category) {
+    case "sukienki":
+      categoryName = "Sukienki";
+      break;
+    case "bluzy":
+      categoryName = "Bluzy";
+      break;
+    case "spodnie":
+      categoryName = "Spodnie";
+      break;
+    case "spodnice":
+      categoryName = "Spódnice";
+      break;
+    case "komplety":
+      categoryName = "Komplety";
+      break;
+    default:
+      categoryName = "Kolekcja";
+  }
 
   return (
-    <div>
-      {loading ? (
-        <LoadingBox />
-      ) : error ? (
-        <MessageBox>{error}</MessageBox>
-      ) : (
-        <div className="collection-page">
-          <h2 className="collection-page__title">Kolekcja</h2>
-          {products.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
-        </div>
-      )}
-    </div>
+    <section className="collection-page">
+      <h2 className="collection-page__name">{categoryName}</h2>
+      <ul className="collection-page__product-list">
+        {products.map((item) => {
+          return (
+            <li key={item.id} className="collection-page__product-item">
+              <Link to={`/produkt/${item.id}`}>
+                <img
+                  className="collection-page__product-img"
+                  src={item.image[0]}
+                  alt={item.category}
+                />
+                <p className="collection-page__product-name">{item.name}</p>
+                <strong className="collection-page__product-price">
+                  {item.price},00 zł
+                </strong>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
