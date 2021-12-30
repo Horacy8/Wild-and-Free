@@ -1,0 +1,128 @@
+.product-page__slider-bottom {
+  padding: 1rem;
+}
+
+.product-page__slider-bottom .swiper-slide {
+  opacity: 0.4;
+}
+
+.product-page__slider-bottom .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.product-page__panel {
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.product-page__name,
+.product-page__price {
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-light);
+  font-size: 1.8rem;
+}
+
+.product-page__price {
+  display: block;
+  margin-top: 1rem;
+}
+
+.product-page__color,
+.product-page__size {
+  margin-top: 2rem;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-light);
+  font-size: 1.6rem;
+}
+
+.product-page__color-item {
+  width: 35px;
+  height: 35px;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #000;
+  border-radius: 10px;
+}
+
+.product-page__size-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
+}
+
+.product-page__color-name,
+.product-page__size-name {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.product-page__size-item {
+  margin-right: 1rem;
+  padding: 1rem 1rem;
+  border: 1px solid black;
+  font-weight: var(--main--font-light);
+  font-size: 1.4rem;
+  border-radius: 10px;
+  transition: all var(--animation-speed);
+}
+
+.product-page__size-item.active {
+  border-color: var(--brighter-color-accent);
+  background-color: var(--darker-color-accent);
+  color: var(--main-color);
+}
+
+.product-page__size-item--disabled {
+  opacity: 0.3;
+}
+
+.product-page__btn {
+  margin: 3rem 0;
+}
+
+.product-page__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-page__options-item {
+  margin-bottom: 1rem;
+}
+
+.product-page__dropdown-icon {
+  font-size: 2.2rem;
+  transition: 0.5s;
+}
+
+.product-page__dropdown-icon--rotate {
+  transform: rotate(180deg);
+}
+
+.product-page__description,
+.product-page__dimensions,
+.product-page__delivery-and-payment {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.product-page__option-name {
+  font-weight: var(--main-font-light);
+  font-size: 1.6rem;
+}
+
+.product-page__dropdown-description,
+.product-page__dropdown-dimensions,
+.product-page__dropdown-delivery-and-payment {
+  display: none;
+  padding: 3rem 0.8rem;
+  border-bottom: 1px solid var(--gray-color);
+  font-weight: var(--main-font-light);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.product-page__dropdown-description--open,
+.product-page__dropdown-dimensions--open,
+.product-page__dropdown-delivery-and-payment--open {
+  display: block;
+}

@@ -140,7 +140,7 @@
 }
 
 .header__logo a img {
-  max-width: 100%;
+  width: 100%;
   max-height: 20px;
   transform: scale(1.2);
 }

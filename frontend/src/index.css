@@ -51,12 +51,17 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0.8rem 3rem;
+  padding: 1.2rem 3rem;
   border: none;
   background: var(--button-color);
   font-family: var(--header-font-family);
