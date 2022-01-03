@@ -4,10 +4,17 @@ import data from "../../data";
 import "./CollectionPage.css";
 
 function CollectionPage(props) {
-  const products = data.products.filter((item) => {
-    let productList = item.category === props.match.params.category;
-    return productList;
-  });
+  let products = [];
+  if (props.match.params.category === "cala") {
+    products = data.products;
+  } else {
+    products = data.products.filter((item) => {
+      const productList = item.category === props.match.params.category;
+      return productList;
+    });
+  }
+
+  console.log(props.match.params);
 
   let categoryName = "";
   switch (props.match.params.category) {
