@@ -5,6 +5,7 @@ import Footer from "./widgets/Footer/Footer";
 import Main from "./pages/Main/Main";
 import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import CartPage from "./pages/CartPage/CartPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import NotFound from "./pages/NotFoundPage/NotFoundPage";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" exact component={Main} />
           <Route path="/kolekcja/:category" exact component={CollectionPage} />
           <Route path="/produkt/:id" component={ProductPage} />
+          <Route path="/koszyk" component={CartPage} />
           <Route path="/kontakt" component={ContactPage} />
           <Route component={NotFound} />
         </Switch>
