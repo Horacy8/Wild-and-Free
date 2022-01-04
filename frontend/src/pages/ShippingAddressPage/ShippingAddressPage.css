@@ -1,0 +1,90 @@
+.shipping-address-page {
+  padding: 0 1rem;
+}
+
+.shipping-address-page__title {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: var(--header-font-family);
+  font-weight: var(--header--font-regular);
+}
+
+.shipping-address-page__input-wrapper {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.shipping-address-page__input-wrapper-two-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shipping-address-page__input-wrapper--short {
+  width: 45%;
+}
+
+.shipping-address-page__input-text {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--gray-color);
+  font-size: 1.4rem;
+  transition: all var(--animation-speed) ease;
+  outline: none;
+}
+
+.shipping-address-page__input-text:focus {
+  border-color: var(--darker-color-accent);
+}
+
+.shipping-address-page__label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 1.4rem;
+  transition: all var(--animation-speed) ease;
+  pointer-events: none;
+}
+
+.shipping-address-page__input-text:focus ~ .shipping-address-page__label,
+.shipping-address-page__input-text:valid ~ .shipping-address-page__label {
+  color: var(--darker-color-accent);
+  transform: translateY(-23px);
+}
+
+.shipping-address-page__input-wrapper-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.shipping-address-page__input-checkbox {
+  -webkit-appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--darker-color-accent);
+  cursor: pointer;
+}
+
+.shipping-address-page__input-checkbox:checked {
+  background: var(--black-color);
+}
+
+.shipping-address-page__label-checkbox {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.shipping-address-page__label-checkbox a {
+  color: var(--darker-color-accent);
+}
