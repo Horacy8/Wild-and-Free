@@ -12,6 +12,10 @@ function ProductPage(props) {
   const product = data.products.find((item) => item._id === props.match.params.id);
 
   const [selectedSize, setSelectedSize] = useState("");
+  const checkCountInStock = product.sizes.find((item) => item.size === selectedSize);
+  const countInStock = checkCountInStock ? checkCountInStock.countInStock : 0;
+
+  console.log(countInStock);
 
   const handleSelectedSize = (size) => setSelectedSize(size);
 
@@ -25,6 +29,7 @@ function ProductPage(props) {
           price: product.price,
           image: product.image[0],
           size: selectedSize,
+          countInStock,
         })
       );
     } else {
@@ -49,6 +54,7 @@ function ProductPage(props) {
         </div>
         <div className="product-page__size">
           <span className="product-page__size-name">Rozmiar</span>
+          {/* TODO po nacisnieciu brakujacego rozmiaru, popup z powiadomieniem o dostepnosci */}
           <ul className="product-page__size-list">
             {product.sizes.map((item) =>
               item.countInStock > 0 ? (
@@ -74,6 +80,7 @@ function ProductPage(props) {
             )}
           </ul>
         </div>
+        {/* TODO wyswietlenie jakiegos powiadomienia bad animacji gdy produkt trafi do koszyka */}
         <button className="btn product-page__btn" onClick={addToCart}>
           Do Koszyka
         </button>
