@@ -7,6 +7,7 @@ import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./pages/CartPage/CartPage";
 import ShippingAddressPage from "./pages/ShippingAddressPage/ShippingAddressPage";
+import PlaceOrderPage from "./pages/PlaceOrderPage/PlaceOrderPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import NotFound from "./pages/NotFoundPage/NotFoundPage";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/produkt/:id" component={ProductPage} />
           <Route path="/koszyk" component={CartPage} />
           <Route path="/dane-adresowe" component={ShippingAddressPage} />
+          <Route path="/podsumowanie" component={PlaceOrderPage} />
           <Route path="/kontakt" component={ContactPage} />
           <Route component={NotFound} />
         </Switch>
