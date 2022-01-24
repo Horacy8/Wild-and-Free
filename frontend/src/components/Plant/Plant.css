@@ -1,0 +1,27 @@
+.plant__icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plant__icon-wrapper svg {
+  /* font-size: calc(20px + (34 - 20) * ((100vw - 300px) / (1600 - 300))); */
+  width: 35px;
+  height: 100%;
+}
+
+.plant__line-left,
+.plant__line-right {
+  display: block;
+  width: 35px;
+  height: 1px;
+  background-color: #bbb;
+}
+
+.plant__line-left {
+  margin-right: 1rem;
+}
+
+.plant__line-right {
+  margin-left: 1rem;
+}

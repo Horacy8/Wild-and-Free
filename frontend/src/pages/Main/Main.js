@@ -1,30 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../../data.js";
-import SwiperCore, { Pagination } from "swiper";
+import Plant from "../../components/Plant/Plant.js";
+// import SwiperCore, { Pagination } from "swiper";
 import { Swiper } from "swiper/react/swiper.js";
 import { SwiperSlide } from "swiper/react/swiper-slide";
 import "swiper/swiper.min.css";
-import "swiper/modules/pagination/pagination.min.css";
+// import "swiper/modules/pagination/pagination.min.css";
 import "./Main.css";
-SwiperCore.use([Pagination]);
+// SwiperCore.use([Pagination]);
 
 function Main() {
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="main">
       <div className="main__baner">
-        <img src="./img/main.jpg" alt="Zdjęcie banerowe" />
+        <div className="main__baner-img">
+          <img
+            src="./img/main.jpg"
+            alt="Zdjęcie banerowe"
+            style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+          />
+        </div>
         <Link to="/kolekcja/cala">
           <button className="btn">Zobacz kolekcję</button>
         </Link>
       </div>
       <section className="main__news">
         <div className="main__header-text">
-          <span className="main__header-text-span-left"></span>
           <h3 className="main__header-text--h">Nowości</h3>
-          <span className="main__header-text-span-right"></span>
         </div>
-        <Swiper slidesPerView={"auto"} spaceBetween={20} className="mySwiper">
+        <Plant />
+        <Swiper slidesPerView={"auto"} spaceBetween={20} className="main__Swiper">
           {data.products.map((item) => {
             return (
               item.isNew && (
@@ -46,24 +61,34 @@ function Main() {
           })}
         </Swiper>
       </section>
-      <section className="main__ig">
-        <div className="main__header-text">
-          <span className="main__header-text-span-left"></span>
-          <h3 className="main__header-text--h">Instagram</h3>
-          <span className="main__header-text-span-right"></span>
+      <Plant />
+      <div className="main__description">
+        <div className="main__description-item">
+          <div className="main__description-img">
+            <img src="/img/description1.jpg" alt="Opis firmy" />
+          </div>
+          <div className="main__description-text">
+            <h3>Marka NARAVE</h3>
+            <p>
+              powstała, by w obecnej erze plastiku powrócić do źródła i na nowo korzystać
+              z darów, które daje nam natura. Kierując się ideą{" "}
+              <strong>Slow Fashion / Slow Life</strong>, stawiamy na naturalne i
+              wysokojakościowe tkaniny. Produkujemy w Polsce z materiałów pochodzących od
+              sprawdzonych, polskich producentów.
+            </p>
+          </div>
         </div>
-        <Swiper slidesPerView={"auto"} spaceBetween={20} className="mySwiper">
-          {data.instagram.map((item) => {
-            return (
-              <SwiperSlide key={item._id}>
-                <a href={item.url}>
-                  <img className="main__instagram-img" src={item.image} alt="Instagram" />
-                </a>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </section>
+        <div className="main__description-item">
+          <img src="/img/description2.jpg" alt="Opis firmy" />
+          <div className="main__description-text">
+            <h3>Dodatki</h3>
+            <p>
+              używane przy pakowaniu zamówień dobierane są w taki sposób, żeby jak
+              najbardziej odpowiadały naturalnym i ekologicznym założeniom marki.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
