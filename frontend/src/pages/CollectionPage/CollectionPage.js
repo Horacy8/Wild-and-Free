@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Plant from "../../components/Plant/Plant.js";
 import data from "../../data";
 import "./CollectionPage.css";
 
@@ -7,6 +8,16 @@ function CollectionPage(props) {
   let products = [];
   if (props.match.params.category === "cala") {
     products = data.products;
+  } else if (props.match.params.category === "bestseller") {
+    products = data.products.filter((item) => {
+      const productList = item.isBestseller;
+      return productList;
+    });
+  } else if (props.match.params.category === "nowosci") {
+    products = data.products.filter((item) => {
+      const productList = item.isNew;
+      return productList;
+    });
   } else {
     products = data.products.filter((item) => {
       const productList = item.category === props.match.params.category;
@@ -30,6 +41,12 @@ function CollectionPage(props) {
     case "spodnice":
       categoryName = "Spódnice";
       break;
+    case "bestseller":
+      categoryName = "Bestseller";
+      break;
+    case "nowosci":
+      categoryName = "Nowości";
+      break;
     default:
       categoryName = "Kolekcja";
   }
@@ -37,6 +54,7 @@ function CollectionPage(props) {
   return (
     <section className="collection-page">
       <h2 className="collection-page__name">{categoryName}</h2>
+      <Plant />
       <ul className="collection-page__product-list">
         {products.map((item) => {
           return (

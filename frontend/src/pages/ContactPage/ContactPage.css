@@ -1,5 +1,5 @@
 .contact-page {
-  margin-top: 3rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,28 +8,48 @@
 .contact-page__name {
   width: 100%;
   text-align: center;
-  font-size: 1.8rem;
   font-family: var(--header-font-family);
-  font-weight: var(--header--font-regular);
+  font-weight: var(--header-font-weight);
+  font-size: calc(26px + (38 - 26) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .contact-page__list {
-  max-width: 200px;
-  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin-top: 3rem;
 }
 
 .contact-page__list-item {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
   margin-bottom: 3rem;
-  color: var(--black-color);
+  color: #000;
+}
+
+.contact-page__list-item:nth-last-child(1) {
+  margin-bottom: 0;
 }
 
 .contact-page__list-item i {
-  font-size: 2rem;
+  font-size: calc(22px + (34 - 22) * ((100vw - 300px) / (1600 - 300)));
+  color: var(--accent-color);
 }
 
 .contact-page__list-item span {
+  margin-left: 2rem;
   font-family: var(--main-font-family);
-  font-size: 1.4rem;
+  font-weight: var(--main-font-weight);
+  font-size: calc(13px + (25 - 13) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.contact-page__text {
+  margin-bottom: 3rem;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: calc(13px + (25 - 13) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
 }
