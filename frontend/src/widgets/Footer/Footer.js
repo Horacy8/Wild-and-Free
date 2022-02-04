@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as ArrowIcon } from "../../assets/icon/ArrowIcon.svg";
 import "./Footer.css";
 
 function Footer() {
@@ -15,11 +16,11 @@ function Footer() {
                 <h6>Informacje</h6>
                 <i
                   className={
-                    dropdownList
-                      ? "fas fa-chevron-down footer__section-icon active"
-                      : "fas fa-chevron-down footer__section-icon"
+                    dropdownList ? "footer__section-icon active" : "footer__section-icon"
                   }
-                ></i>
+                >
+                  <ArrowIcon />
+                </i>
               </div>
               <ul
                 className={

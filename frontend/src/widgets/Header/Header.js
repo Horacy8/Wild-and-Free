@@ -1,22 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Name } from "../../assets/icon/Nazwa.svg";
+import TopBar from "./TopBar/TopBar";
 import Basket from "./Basket/Basket";
 import Nav from "./Nav/Nav";
 import "./Header.css";
 
 function Header() {
   return (
-    <header className="header">
-      <Nav></Nav>
+    <>
+      <TopBar />
+      <header className="header">
+        <Nav></Nav>
 
-      <div className="header__logo">
-        <Link to="/">
-          <img src="./img/name.jpg" alt="" />
-        </Link>
-      </div>
+        <div className="header__logo">
+          <Link to="/">
+            <Name />
+          </Link>
+        </div>
 
-      <Basket></Basket>
-    </header>
+        <Basket></Basket>
+      </header>
+    </>
   );
 }
 

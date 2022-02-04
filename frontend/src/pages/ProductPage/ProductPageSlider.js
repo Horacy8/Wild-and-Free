@@ -20,7 +20,6 @@ function ProductPageSlider(props) {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
-        spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         className="product-page__slider-top"

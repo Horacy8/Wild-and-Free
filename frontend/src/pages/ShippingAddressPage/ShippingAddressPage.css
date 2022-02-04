@@ -1,15 +1,21 @@
 .shipping-address-page {
-  padding: 0 1rem;
+  padding: 3rem 2rem 0 2rem;
 }
 
 .shipping-address-page__title {
   width: 100%;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  font-size: 1.8rem;
   font-family: var(--header-font-family);
-  font-weight: var(--header--font-regular);
+  font-weight: var(--header-font-weight);
+  font-size: calc(26px + (38 - 26) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
+}
+
+.shipping-address-page__title--margin {
+  margin-top: 4rem;
+}
+
+.shipping-address-page__address-inputs {
+  margin-top: 3rem;
 }
 
 .shipping-address-page__input-wrapper {
@@ -34,34 +40,64 @@
   height: 40px;
   border: none;
   border-bottom: 1px solid var(--gray-color);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
   font-size: 1.4rem;
   transition: all var(--animation-speed) ease;
   outline: none;
 }
 
 .shipping-address-page__input-text:focus {
-  border-color: var(--darker-color-accent);
+  border-color: var(--accent-color);
 }
 
-.shipping-address-page__label {
+.shipping-address-page__label,
+.shipping-address-page__label-no-req {
   position: absolute;
   left: 0;
   bottom: 10px;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
   font-size: 1.4rem;
   transition: all var(--animation-speed) ease;
   pointer-events: none;
 }
 
 .shipping-address-page__input-text:focus ~ .shipping-address-page__label,
-.shipping-address-page__input-text:valid ~ .shipping-address-page__label {
-  color: var(--darker-color-accent);
+.shipping-address-page__input-text:valid ~ .shipping-address-page__label,
+.shipping-address-page__input-text:focus ~ .shipping-address-page__label-no-req,
+.shipping-address-page__label-no-req.active {
+  font-size: 1.1rem;
+  color: var(--accent-color);
   transform: translateY(-23px);
+}
+
+.shipping-address-page__optional {
+  color: #bbb;
+  font-size: 1.1rem;
+  transition: all var(--animation-speed) ease;
+}
+
+.shipping-address-page__input-text:focus
+  ~ .shipping-address-page__label-no-req
+  .shipping-address-page__optional,
+.shipping-address-page__label-no-req.active .shipping-address-page__optional {
+  font-size: 0.9rem;
+}
+
+.shipping-address__info {
+  font-size: 1.1rem;
+}
+
+.shipping-address__info--center {
+  margin-top: 3rem;
+  text-align: center;
 }
 
 .shipping-address-page__input-wrapper-checkbox {
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
 }
 
 .shipping-address-page__input-checkbox {
@@ -70,21 +106,25 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  background: #fff;
+  background: var(--main-color);
   border: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--darker-color-accent);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--gray-color);
   cursor: pointer;
 }
 
 .shipping-address-page__input-checkbox:checked {
-  background: var(--black-color);
+  background: var(--accent-color);
 }
 
 .shipping-address-page__label-checkbox {
-  margin-left: 1rem;
+  margin-left: 2rem;
   font-size: 1.4rem;
 }
 
 .shipping-address-page__label-checkbox a {
-  color: var(--darker-color-accent);
+  color: var(--accent-color);
+}
+
+.shipping-addres-page__btn {
+  margin-top: 4rem;
 }

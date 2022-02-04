@@ -11,24 +11,27 @@ import PlaceOrderPage from "./pages/PlaceOrderPage/PlaceOrderPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import NotFound from "./pages/NotFoundPage/NotFoundPage";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/kolekcja/:category" exact component={CollectionPage} />
-          <Route path="/produkt/:id" component={ProductPage} />
-          <Route path="/koszyk" component={CartPage} />
-          <Route path="/dane-adresowe" component={ShippingAddressPage} />
-          <Route path="/podsumowanie" component={PlaceOrderPage} />
-          <Route path="/onas" component={AboutPage} />
-          <Route path="/kontakt" component={ContactPage} />
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
+        <ScrollToTop>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Main} />
+            <Route path="/kolekcja/:category" exact component={CollectionPage} />
+            <Route path="/produkt/:id" component={ProductPage} />
+            <Route path="/koszyk" component={CartPage} />
+            <Route path="/dane-adresowe" component={ShippingAddressPage} />
+            <Route path="/podsumowanie" component={PlaceOrderPage} />
+            <Route path="/onas" component={AboutPage} />
+            <Route path="/kontakt" component={ContactPage} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </ScrollToTop>
       </div>
     </Router>
   );

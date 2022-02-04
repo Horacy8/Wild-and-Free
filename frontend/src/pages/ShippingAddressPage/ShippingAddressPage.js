@@ -1,21 +1,32 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { saveShippingAddress } from "../../redux/features/cart/cartSlice";
+import Plant from "../../components/Plant/Plant";
 import "./ShippingAddressPage.css";
 
-// TODO dodac sprawdzenie poprawnosci wpisywanych danych w zaleznosci od inputa
-// TODO opcjonalne inputy jak w koszyku plus dodanie napisu (Opcjonalne)
+// TODO ceny przy dostawach
+// TODO customowe powiadomienie o błędnym wpisaniu
+// TODO poprawić sprawdzenie poprawnosci wpisywania
+// TODO API InPosta, wybór paczkomatu na mapie
+
 function ShippingAddressPage(props) {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [business, setBusiness] = useState("");
-  const [nip, setNip] = useState("");
-  const [address, setAddress] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [city, setCity] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const cart = useSelector((state) => state.cart);
+  const { cartItems, shippingAddress } = cart;
+
+  if (cartItems.length === 0) {
+    props.history.push("/koszyk");
+  }
+
+  const [name, setName] = useState(shippingAddress.name);
+  const [surname, setSurname] = useState(shippingAddress.surname);
+  const [business, setBusiness] = useState(shippingAddress.business);
+  const [nip, setNip] = useState(shippingAddress.nip);
+  const [address, setAddress] = useState(shippingAddress.address);
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  const [city, setCity] = useState(shippingAddress.city);
+  const [phone, setPhone] = useState(shippingAddress.phone);
+  const [email, setEmail] = useState(shippingAddress.email);
 
   const [acceptShopRegulations, setAcceptShopRegulations] = useState(false);
 
@@ -26,7 +37,8 @@ function ShippingAddressPage(props) {
   const handlePaymentMethod = (e) => setPaymentMethod(e.target.value);
 
   const dispatch = useDispatch();
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
     dispatch(
       saveShippingAddress({
         name,
@@ -46,11 +58,10 @@ function ShippingAddressPage(props) {
     props.history.push(`/podsumowanie`);
   };
 
-  console.log(paymentMethod);
-
   return (
     <div className="shipping-address-page">
       <h3 className="shipping-address-page__title">Dane Adresowe</h3>
+      <Plant />
       <form className="shipping-address-page__form" onSubmit={submitHandler}>
         <div className="shipping-address-page__address-inputs">
           <div className="shipping-address-page__input-wrapper">
@@ -86,23 +97,38 @@ function ShippingAddressPage(props) {
               id="business"
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              required
+              required={nip}
             />
-            <label className="shipping-address-page__label" htmlFor="business">
-              Firma
+            <label
+              className={
+                business
+                  ? "shipping-address-page__label-no-req active"
+                  : "shipping-address-page__label-no-req"
+              }
+              htmlFor="business"
+            >
+              Firma* <span className="shipping-address-page__optional">(Opcjonalne)</span>
             </label>
           </div>
           <div className="shipping-address-page__input-wrapper">
             <input
               className="shipping-address-page__input-text"
-              type="text"
+              type="number"
+              inputMode="decimal"
               id="nip"
               value={nip}
               onChange={(e) => setNip(e.target.value)}
-              required
+              required={business}
             />
-            <label className="shipping-address-page__label" htmlFor="nip">
-              NIP
+            <label
+              className={
+                nip
+                  ? "shipping-address-page__label-no-req active"
+                  : "shipping-address-page__label-no-req"
+              }
+              htmlFor="nip"
+            >
+              NIP* <span className="shipping-address-page__optional">(Opcjonalne)</span>
             </label>
           </div>
           <div className="shipping-address-page__input-wrapper">
@@ -124,11 +150,19 @@ function ShippingAddressPage(props) {
                 className="shipping-address-page__input-text"
                 type="text"
                 id="postalCode"
+                pattern="[0-9]{2}[-][0-9]{3}"
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
                 required
               />
-              <label className="shipping-address-page__label" htmlFor="postalCode">
+              <label
+                className={
+                  postalCode
+                    ? "shipping-address-page__label-no-req active"
+                    : "shipping-address-page__label-no-req"
+                }
+                htmlFor="postalCode"
+              >
                 Kod Pocztowy
               </label>
             </div>
@@ -149,7 +183,8 @@ function ShippingAddressPage(props) {
           <div className="shipping-address-page__input-wrapper">
             <input
               className="shipping-address-page__input-text"
-              type="text"
+              type="number"
+              inputMode="tel"
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -162,16 +197,25 @@ function ShippingAddressPage(props) {
           <div className="shipping-address-page__input-wrapper">
             <input
               className="shipping-address-page__input-text"
-              type="text"
+              type="email"
+              inputMode="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <label className="shipping-address-page__label" htmlFor="email">
-              Email
+            <label
+              className={
+                email
+                  ? "shipping-address-page__label-no-req active"
+                  : "shipping-address-page__label-no-req"
+              }
+              htmlFor="email"
+            >
+              E-mail
             </label>
           </div>
+          <p className="shipping-address__info">* Nie wystawiamy Faktur VAT</p>
           <div className="shipping-address-page__input-wrapper-checkbox">
             <input
               className="shipping-address-page__input-checkbox"
@@ -185,13 +229,15 @@ function ShippingAddressPage(props) {
               className="shipping-address-page__label-checkbox"
               htmlFor="AcceptShopRegulations"
             >
-              Akceptuje <Link to="/regulamin">Regulamin</Link> i{" "}
-              <Link to="/polityka-prywatnosci">Polityke Prywatności</Link>
+              Akceptuję <Link to="/regulamin">Regulamin</Link> i{" "}
+              <Link to="/polityka-prywatnosci">Politykę Prywatności</Link>
             </label>
           </div>
         </div>
         <div className="shipping-address-page__delivery-inputs">
-          <h3 className="shipping-address-page__title">Dostawa</h3>
+          <h3 className="shipping-address-page__title shipping-address-page__title--margin">
+            Dostawa
+          </h3>
           <div className="shipping-address-page__input-wrapper-checkbox">
             <input
               className="shipping-address-page__input-checkbox"
@@ -229,7 +275,9 @@ function ShippingAddressPage(props) {
           </div>
         </div>
         <div className="shipping-address-page__delivery-inputs">
-          <h3 className="shipping-address-page__title">Płatność</h3>
+          <h3 className="shipping-address-page__title shipping-address-page__title--margin">
+            Płatność
+          </h3>
           <div className="shipping-address-page__input-wrapper-checkbox">
             <input
               className="shipping-address-page__input-checkbox"
@@ -266,7 +314,7 @@ function ShippingAddressPage(props) {
             </label>
           </div>
         </div>
-        <button className="btn" type="submit">
+        <button className="btn shipping-addres-page__btn" type="submit">
           Do Podsumowania
         </button>
       </form>

@@ -12,12 +12,36 @@ function ProductPage(props) {
   const product = data.products.find((item) => item._id === props.match.params.id);
 
   const [selectedSize, setSelectedSize] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
   const checkCountInStock = product.sizes.find((item) => item.size === selectedSize);
   const countInStock = checkCountInStock ? checkCountInStock.countInStock : 0;
 
-  console.log(countInStock);
+  const handleSelectedSize = (size) => {
+    setSelectedSize(size);
+    setQuantity(1);
+  };
 
-  const handleSelectedSize = (size) => setSelectedSize(size);
+  const handleQuantity = (action) => {
+    if (selectedSize) {
+      switch (action) {
+        case "plus":
+          if (quantity < countInStock && quantity < 10) {
+            setQuantity(quantity + 1);
+          } else return;
+          break;
+        case "minus":
+          if (quantity >= 2) {
+            setQuantity(quantity - 1);
+          } else return;
+          break;
+        default:
+          return;
+      }
+    } else {
+      alert("Wybierz rozmiar");
+    }
+  };
 
   const dispatch = useDispatch();
   const addToCart = () => {
@@ -29,7 +53,7 @@ function ProductPage(props) {
           price: product.price,
           image: product.image[0],
           size: selectedSize,
-          countInStock,
+          qty: quantity,
         })
       );
     } else {
@@ -38,55 +62,73 @@ function ProductPage(props) {
   };
 
   return (
-    <div className="product-page">
-      <ProductPageSlider product={product} />
-      <div className="product-page__panel">
-        <div className="product-page__title">
-          <h2 className="product-page__name">{product.name}</h2>
-          <strong className="product-page__price">{product.price},00 zł</strong>
+    <>
+      <div className="product-page">
+        <ProductPageSlider product={product} />
+        <div className="product-page__panel">
+          <div className="product-page__title">
+            <h2 className="product-page__name">{product.name}</h2>
+            <strong className="product-page__price">{product.price},00 zł</strong>
+          </div>
+          <div className="product-page__size">
+            <span className="product-page__size-name">Rozmiar</span>
+            <ul className="product-page__size-list">
+              {product.sizes.map((item) =>
+                item.countInStock > 0 ? (
+                  <li
+                    onClick={() => handleSelectedSize(item.size)}
+                    key={item.size}
+                    className={
+                      selectedSize === item.size
+                        ? "product-page__size-item active"
+                        : "product-page__size-item"
+                    }
+                  >
+                    {item.size}
+                  </li>
+                ) : (
+                  <li
+                    key={item.size}
+                    className="product-page__size-item product-page__size-item--disabled"
+                    onClick={() => handleSelectedSize(item.size)}
+                  >
+                    {item.size}
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+          <div className="product-page__qty">
+            <span className="product-page__qty-name">Ilość</span>
+            <div className="product-page__counter-wrapper">
+              <button
+                className="product-page__counter-btn-minus"
+                onClick={() => handleQuantity("minus")}
+              >
+                -
+              </button>
+              <span className="product-page__counter">{quantity}</span>
+              <button
+                className="product-page__counter-btn-plus"
+                onClick={() => handleQuantity("plus")}
+              >
+                +
+              </button>
+            </div>
+          </div>
+          {countInStock || selectedSize === "" ? (
+            <button className="btn" onClick={addToCart}>
+              Do Koszyka
+            </button>
+          ) : (
+            <button className="btn btn-disabled" disabled>
+              Produkt wyprzedany
+            </button>
+          )}
+          <ProductPageOptions product={product} />
         </div>
-        <div className="product-page__color">
-          <span className="product-page__color-name">Kolor</span>
-          <div
-            className="product-page__color-item"
-            style={{ backgroundColor: product.color }}
-          ></div>
-        </div>
-        <div className="product-page__size">
-          <span className="product-page__size-name">Rozmiar</span>
-          {/* TODO po nacisnieciu brakujacego rozmiaru, popup z powiadomieniem o dostepnosci */}
-          <ul className="product-page__size-list">
-            {product.sizes.map((item) =>
-              item.countInStock > 0 ? (
-                <li
-                  onClick={() => handleSelectedSize(item.size)}
-                  key={item.size}
-                  className={
-                    selectedSize === item.size
-                      ? "product-page__size-item active"
-                      : "product-page__size-item"
-                  }
-                >
-                  {item.size}
-                </li>
-              ) : (
-                <li
-                  key={item.size}
-                  className="product-page__size-item product-page__size-item--disabled"
-                >
-                  {item.size}
-                </li>
-              )
-            )}
-          </ul>
-        </div>
-        {/* TODO wyswietlenie jakiegos powiadomienia bad animacji gdy produkt trafi do koszyka */}
-        <button className="btn product-page__btn" onClick={addToCart}>
-          Do Koszyka
-        </button>
-        <ProductPageOptions product={product} />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,31 +1,36 @@
 .place-order-page {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 3rem 2rem 0 2rem;
 }
 
 .place-order-page__title {
   width: 100%;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  font-size: 1.8rem;
   font-family: var(--header-font-family);
-  font-weight: var(--header--font-regular);
+  font-weight: var(--header-font-weight);
+  font-size: calc(26px + (38 - 26) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
 }
 
 .place-order-page__shipping-address,
 .place-order-page__delivery-and-payment,
 .place-order-page__products-and-total-price {
-  padding: 0 1rem 1rem 1rem;
   border-bottom: 1px solid var(--gray-color);
-  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.place-order-page__shipping-address {
+  margin-top: 3rem;
 }
 
 .place-order-page__name {
   margin-bottom: 1.5rem;
-  font-size: 1.7rem;
-  font-weight: var(--main-font-regular);
+  font-weight: var(--main-font-weight);
+  font-size: calc(17px + (29 - 17) * ((100vw - 300px) / (1600 - 300)));
   text-transform: uppercase;
+}
+
+.place-order-page__name--products {
+  margin-bottom: 3rem;
 }
 
 .place-order-page__name--payment {
@@ -34,16 +39,31 @@
 
 .place-order-page p,
 .place-order-page span {
-  font-size: 1.3rem;
-  font-weight: var(--main-font-light);
+  font-weight: var(--main-font-weight);
+  font-size: calc(12px + (24 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .place-order-page p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .place-order-page__business {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.place-order-page__delivery-and-payment {
+  margin-top: 1.5rem;
+}
+
+p.place-order-page__payment {
+  margin-bottom: 1.5rem;
+}
+
+.place-order-page__products-and-total-price {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
 
 .place-order-page__delivery,
@@ -61,32 +81,46 @@
 
 .place-order-page__product {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr;
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.place-order-page__product:nth-last-child(1) {
+  margin-bottom: 0;
 }
 
 .place-order-page__product-description {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  padding-left: 1rem;
+}
+
+.place-order-page__product-name {
+  text-transform: uppercase;
+}
+
+.place-order-page__size {
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: calc(11px + (23 - 11) * ((100vw - 300px) / (1600 - 300)));
+  color: #bbb;
 }
 
 .place-order-page__quantity,
 .place-order-page__product-price {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.place-order-page__products-and-total-price {
-  margin-bottom: 4rem;
+.place-order-page__total-price {
+  margin-top: 3rem;
 }
 
 .place-order-page__total-price span {
-  margin-bottom: 1.5rem;
-  font-size: 1.9rem;
-  font-weight: var(--main-font-regular);
-  text-transform: uppercase;
+  font-family: var(--main-font-family);
+  font-weight: bold;
+  font-size: calc(15px + (27 - 15) * ((100vw - 300px) / (1600 - 300)));
 }

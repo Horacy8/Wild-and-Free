@@ -1,6 +1,7 @@
 .cart-page {
-  margin-top: 3rem;
-  padding: 0 1rem;
+  margin-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* Koszyk pusty */
@@ -12,23 +13,27 @@
   justify-content: space-evenly;
 }
 
+.cart-page__empty svg {
+  width: 8rem;
+  height: 8rem;
+}
+
 .cart-page__empty-title,
 .cart-page__empty-text,
 .cart-page__empty a {
   margin-top: 3rem;
 }
 
-.cart-page__empty svg {
-  width: 7rem;
-  height: 7rem;
-}
-
 .cart-page__empty-title {
-  font-size: 1.8rem;
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+  font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .cart-page__empty-text {
-  font-size: 1.6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   text-align: center;
 }
 
@@ -36,15 +41,16 @@
 
 .cart-page__title {
   width: 100%;
-  text-align: center;
-  font-size: 1.8rem;
   font-family: var(--header-font-family);
-  font-weight: var(--header--font-regular);
+  font-weight: var(--header-font-weight);
+  font-size: calc(26px + (38 - 26) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
 }
 
 .cart-page__columns {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 @media screen and (min-width: 1024px) {
   .cart-page__columns {
@@ -57,7 +63,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
 }
 
 .cart-page__product {
@@ -67,7 +72,7 @@
   grid-template-areas:
     "image name icon"
     "image quantity price";
-  padding: 0 1rem 1.5rem 1rem;
+  padding: 0 1rem 2rem 1rem;
   margin-top: 2rem;
   border-bottom: 1px solid var(--gray-color);
 }
@@ -88,35 +93,62 @@
 .cart-page__name,
 .cart-page__size,
 .cart-page__price {
-  font-weight: var(--main-font-light);
-  font-size: 1.4rem;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: calc(11px + (23 - 11) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .cart-page__name {
-  color: var(--black-color);
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .cart-page__size {
   margin-top: 0.5rem;
-  color: var(--gray-color);
+  color: #bbb;
+}
+
+.cart-page__price {
+  font-size: calc(12px + (24 - 12) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .cart-page__quantity,
 .cart-page__icon,
 .cart-page__price {
   display: flex;
-  justify-content: center;
 }
 
 .cart-page__quantity {
   grid-area: quantity;
+  justify-content: center;
   align-items: flex-end;
+}
+
+.cart-page__icon-wrapper {
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
 }
 
 .cart-page__icon {
   grid-area: icon;
   justify-content: flex-end;
-  font-size: 1.8rem;
+}
+
+.cart-page__icon-wrapper svg {
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  transform: rotateY(180deg);
+}
+
+.cart-page__icon-wrapper svg #pokrywa {
+  transition: all 300ms ease;
+}
+
+.cart-page__icon-wrapper:hover svg #pokrywa {
+  transform: rotate(-35deg);
 }
 
 .cart-page__price {
@@ -125,15 +157,21 @@
   align-items: flex-end;
 }
 
+.cart-page__col2 {
+  margin-top: 4rem;
+}
+
 /* Kod rabatowy */
 
 .cart-page__discount-code {
+  margin-bottom: 4rem;
+}
+
+.cart-page__discount-code-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 5rem;
-  margin-top: 5rem;
-  border-bottom: 1px solid var(--gray-color);
+  width: 100%;
 }
 
 .cart-page__discount-code-input-wrapper {
@@ -147,31 +185,34 @@
   height: 40px;
   border: none;
   border-bottom: 1px solid var(--gray-color);
+  font-family: var(--main-font-family);
   font-size: 1.4rem;
   transition: all var(--animation-speed) ease;
   outline: none;
 }
 
 .cart-page__discount-code-input-wrapper input:focus {
-  border-color: var(--darker-color-accent);
+  border-color: var(--accent-color);
 }
 
 .cart-page__discount-code-input-wrapper label {
   position: absolute;
   left: 0;
   bottom: 10px;
+  font-family: var(--main-font-family);
   font-size: 1.4rem;
   transition: all var(--animation-speed) ease;
   pointer-events: none;
 }
 
 .cart-page__discount-code-input-wrapper input:focus ~ label {
-  color: var(--darker-color-accent);
+  font-size: 1.1rem;
+  color: var(--accent-color);
   transform: translateY(-23px);
 }
 
 .cart-page__discount-code-input-wrapper input:valid ~ label {
-  color: var(--darker-color-accent);
+  color: var(--accent-color);
   transform: translateY(-23px);
 }
 
@@ -180,11 +221,9 @@
 }
 
 /* Koszty */
+
 .cart-page__costs {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .cart-page__products-price,
@@ -197,19 +236,21 @@
 
 .cart-page__products-price,
 .cart-page__delivery {
-  font-size: 1.5rem;
-  font-weight: var(--main-font-light);
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .cart-page__products-price {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .cart-page__delivery {
-  margin-bottom: 4.5rem;
+  margin-bottom: 4rem;
 }
 
 .cart-page__subtotal {
-  font-size: 1.6rem;
-  font-weight: var(--main-font-regular);
+  font-family: var(--main-font-family);
+  font-weight: bold;
+  font-size: calc(15px + (27 - 15) * ((100vw - 300px) / (1600 - 300)));
 }

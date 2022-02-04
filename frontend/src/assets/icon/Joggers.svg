@@ -1,30 +1,30 @@
 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="JOGGERS">
-<path id="Vector 93" d="M12.5 9V2.5" stroke="black" stroke-width="0.4" stroke-linecap="round"/>
-<path id="Vector 73" d="M8 2V0.52C8 0.508954 8.00895 0.5 8.02 0.5H16.98C16.991 0.5 17 0.508954 17 0.52V2" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 74" d="M8 2C10 2.5 15 2.5 17 2" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<path id="Vector 75" d="M12.5 8.5C11.5 12.5 12 10.5 10.5 22" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 102" d="M12.5 8.5C13.5 12.5 13 10 14.5 22" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 77" d="M7.99956 2.02963C6.30764 8.48233 7 16 6.90724 22.006" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 103" d="M17 2.0253C18.6919 8.478 17.9996 15.9957 18.0923 22.0017" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 79" d="M6.91172 22.05C6.57839 22.55 6.11172 23.55 6.91172 23.55" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 80" d="M10.5 22.05C10.6667 22.55 10.8 23.55 10 23.55" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 81" d="M7 23.55H10" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 85" d="M10 2.39312C9.6428 4.42349 8.5 5.42 7.32634 6.01265" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<path id="Vector 94" d="M15.0042 2.39312C15.3614 4.42349 16.5 5.42 17.6779 6.01265" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<path id="Vector 87" d="M7.19086 23.5C7.0242 23.9333 6.79086 24.8 7.19086 24.8" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<path id="Vector 88" d="M9.77914 23.5C9.94581 23.9333 10.1791 24.8 9.77914 24.8" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<line id="Line 6" x1="7.2" y1="24.8" x2="9.8" y2="24.8" stroke="black" stroke-width="0.3"/>
-<path id="Vector 97" d="M18.0883 22.05C18.4216 22.55 18.8883 23.55 18.0883 23.55" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 98" d="M14.5 22.05C14.3333 22.55 14.2 23.55 15 23.55" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 99" d="M18 23.55H15" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path id="Vector 100" d="M17.8091 23.5C17.9758 23.9333 18.2091 24.8 17.8091 24.8" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<path id="Vector 101" d="M15.2209 23.5C15.0542 23.9333 14.8209 24.8 15.2209 24.8" stroke="black" stroke-width="0.3" stroke-linecap="round"/>
-<line id="Line 7" y1="-0.15" x2="2.6" y2="-0.15" transform="matrix(-1 0 0 1 17.8 24.95)" stroke="black" stroke-width="0.3"/>
-<circle id="Ellipse 5" cx="11.9" cy="1.25" r="0.25" fill="black"/>
-<circle id="Ellipse 6" cx="13.1" cy="1.25" r="0.25" fill="black"/>
-<path id="Vector 39" d="M12.5401 1.23651C13.4559 2.20194 12.5768 4.248 13.4653 6.19598" stroke="black" stroke-width="0.2" stroke-linecap="round"/>
-<path id="Vector 91" d="M12 1.32086C12.1667 1.15419 12.6 0.920861 13 1.32086" stroke="black" stroke-width="0.2" stroke-linecap="round"/>
-<path id="Vector 39_2" d="M12.4596 1.21164C11.4797 2.57037 12.3554 3.60937 11.848 4.68836" stroke="black" stroke-width="0.2" stroke-linecap="round"/>
+<path id="Vector 93" d="M12.5 9V2.5" stroke="#bbb" stroke-width="0.4" stroke-linecap="round"/>
+<path id="Vector 73" d="M8 2V0.52C8 0.508954 8.00895 0.5 8.02 0.5H16.98C16.991 0.5 17 0.508954 17 0.52V2" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 74" d="M8 2C10 2.5 15 2.5 17 2" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<path id="Vector 75" d="M12.5 8.5C11.5 12.5 12 10.5 10.5 22" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 102" d="M12.5 8.5C13.5 12.5 13 10 14.5 22" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 77" d="M7.99956 2.02963C6.30764 8.48233 7 16 6.90724 22.006" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 103" d="M17 2.0253C18.6919 8.478 17.9996 15.9957 18.0923 22.0017" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 79" d="M6.91172 22.05C6.57839 22.55 6.11172 23.55 6.91172 23.55" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 80" d="M10.5 22.05C10.6667 22.55 10.8 23.55 10 23.55" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 81" d="M7 23.55H10" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 85" d="M10 2.39312C9.6428 4.42349 8.5 5.42 7.32634 6.01265" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<path id="Vector 94" d="M15.0042 2.39312C15.3614 4.42349 16.5 5.42 17.6779 6.01265" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<path id="Vector 87" d="M7.19086 23.5C7.0242 23.9333 6.79086 24.8 7.19086 24.8" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<path id="Vector 88" d="M9.77914 23.5C9.94581 23.9333 10.1791 24.8 9.77914 24.8" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<line id="Line 6" x1="7.2" y1="24.8" x2="9.8" y2="24.8" stroke="#bbb" stroke-width="0.3"/>
+<path id="Vector 97" d="M18.0883 22.05C18.4216 22.55 18.8883 23.55 18.0883 23.55" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 98" d="M14.5 22.05C14.3333 22.55 14.2 23.55 15 23.55" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 99" d="M18 23.55H15" stroke="#bbb" stroke-width="0.5" stroke-linecap="round"/>
+<path id="Vector 100" d="M17.8091 23.5C17.9758 23.9333 18.2091 24.8 17.8091 24.8" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<path id="Vector 101" d="M15.2209 23.5C15.0542 23.9333 14.8209 24.8 15.2209 24.8" stroke="#bbb" stroke-width="0.3" stroke-linecap="round"/>
+<line id="Line 7" y1="-0.15" x2="2.6" y2="-0.15" transform="matrix(-1 0 0 1 17.8 24.95)" stroke="#bbb" stroke-width="0.3"/>
+<circle id="Ellipse 5" cx="11.9" cy="1.25" r="0.25" fill="#bbb"/>
+<circle id="Ellipse 6" cx="13.1" cy="1.25" r="0.25" fill="#bbb"/>
+<path id="Vector 39" d="M12.5401 1.23651C13.4559 2.20194 12.5768 4.248 13.4653 6.19598" stroke="#bbb" stroke-width="0.2" stroke-linecap="round"/>
+<path id="Vector 91" d="M12 1.32086C12.1667 1.15419 12.6 0.920861 13 1.32086" stroke="#bbb" stroke-width="0.2" stroke-linecap="round"/>
+<path id="Vector 39_2" d="M12.4596 1.21164C11.4797 2.57037 12.3554 3.60937 11.848 4.68836" stroke="#bbb" stroke-width="0.2" stroke-linecap="round"/>
 </g>
 </svg>
