@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import Backdrop from "../../../components/Backdrop/Backdrop";
-// import HamburgerIcon from "./HamburgerIcon";
 import NavItem from "./NavItem";
 import { ReactComponent as HamburgerIcon } from "../../../assets/icon/HamburgerIcon.svg";
 import { ReactComponent as Skirt } from "../../../assets/icon/Skirt.svg";
@@ -22,27 +21,18 @@ function Nav() {
   const handleDropdownMenu = () => {
     if (!dropdownMenu) {
       setDropdownMenu(true);
-      document.body.style.overflow = "hidden";
+      // document.body.style.overflow = "hidden";
     } else {
       setDropdownMenu(false);
-      document.body.style.overflow = "unset";
+      // document.body.style.overflow = "unset";
     }
-    // setDropdownMenu(!dropdownMenu);
   };
-
-  // const stopScroll = () => {
-  //   if (dropdownMenu) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "unset";
-  //   }
-  // };
 
   useEffect(() => {
     let closeHandler = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setDropdownMenu(false);
-        document.body.style.overflow = "unset";
+        // document.body.style.overflow = "unset";
       }
     };
     document.addEventListener("mousedown", closeHandler);
@@ -93,10 +83,10 @@ function Nav() {
                 O nas
               </NavItem>
               <li className="header-nav__social-media">
-                <Link to="/adres-na-fb">
+                <Link to="/">
                   <i className="fab fa-facebook-square"></i>
                 </Link>
-                <Link to="/adres-na-ig">
+                <Link to="/">
                   <i className="fab fa-instagram"></i>
                 </Link>
               </li>

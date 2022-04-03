@@ -24,8 +24,16 @@
   padding-right: 2rem;
 }
 
+@media screen and (min-width: 460px) {
+  .collection-page__product-list {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+  }
+}
+
 .collection-page__product-item {
   width: 100%;
+  max-width: 300px;
   margin-top: 3rem;
   padding-left: 2rem;
 }
@@ -55,4 +63,22 @@
 .collection-page__product-price {
   margin-top: 0.5rem;
   font-size: calc(11px + (23 - 11) * ((100vw - 300px) / (1600 - 300)));
+}
+
+@media screen and (min-width: 540px) {
+  .collection-page__product-name {
+    font-size: 14px;
+  }
+  .collection-page__product-price {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .collection-page__product-name {
+    font-size: 15px;
+  }
+  .collection-page__product-price {
+    font-size: 14px;
+  }
 }

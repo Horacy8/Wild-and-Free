@@ -3,14 +3,13 @@ import { useSelector } from "react-redux";
 import Plant from "../../components/Plant/Plant";
 import "./PlaceOrderPage.css";
 
-// FIXME wyswietlanie dostawy jesli kurier to kurier jesli paczkomat to jego dane
-// FIXME poprawne wyswietlanie sposobu platnosci
-// TODO Po nacisnieciu zamawiam przekierowanie do strony platnosci
-// TODO odsyłanie jesli koszyk lub dane adresowe puste
-
-function PlaceOrderPage() {
+function PlaceOrderPage(props) {
   const cart = useSelector((state) => state.cart);
   const { cartItems, shippingAddress } = cart;
+
+  if (cartItems.length === 0 || !shippingAddress) {
+    props.history.push("/koszyk");
+  }
 
   const priceForAllProducts = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const deliveryCost = 14;

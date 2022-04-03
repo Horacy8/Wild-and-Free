@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 .header {
   position: fixed;
   top: 0;
@@ -28,6 +30,7 @@
   bottom: 0;
   left: -110%;
   width: 80%;
+  max-width: 600px;
   background-color: var(--main-color);
   transition: left 500ms ease;
   opacity: 1;
@@ -128,6 +131,21 @@
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 1024px) {
+  .header-nav__item a,
+  .header-nav__item-collection {
+    font-size: 20px;
+  }
+
+  .header-nav__item-collection--open {
+    font-size: 22px;
+  }
+
+  .header-nav__social-media a {
+    font-size: 30px;
+  }
+}
+
 /* CSSTransition classes  */
 
 .menu-primary-enter {
@@ -173,6 +191,9 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  font-family: "Great Vibes";
+  font-size: calc(27px + (38 - 27) * ((100vw - 300px) / (1600 - 300)));
+  color: #000;
 }
 
 .header__logo a svg {
@@ -222,6 +243,7 @@
   bottom: 0;
   right: -110%;
   width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -261,11 +283,21 @@
   font-weight: var(--header-font-weight);
   font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
+
 .header__basket-empty-text {
   padding-left: 2rem;
   padding-right: 2rem;
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .header__basket-empty-title {
+    font-size: 22px;
+  }
+  .header__basket-empty-text {
+    font-size: 20px;
+  }
 }
 
 .header__basket-item-list {
@@ -372,6 +404,33 @@
   align-items: flex-end;
 }
 
+@media screen and (min-width: 1024px) {
+  .header__basket-product {
+    grid-template-columns: 0.2fr 0.8fr 0.4fr;
+  }
+
+  .header__basket-product-name,
+  .header__basket-product-size,
+  .header__basket-product-price {
+    font-size: 16px;
+  }
+  .header__basket-product-counter-wrapper {
+    width: 80px;
+  }
+
+  .header__basket-product-counter {
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .header__basket-product-btn-minus,
+  .header__basket-product-btn-plus {
+    font-size: 16px;
+    padding: 0.8rem;
+  }
+}
+
 /* BASKET DROPDOWN BOTTOM */
 
 .header__basket-bottom {
@@ -396,4 +455,10 @@
 .header__basket-bottom a {
   display: block;
   width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .header__basket-summary {
+    font-size: 20px;
+  }
 }

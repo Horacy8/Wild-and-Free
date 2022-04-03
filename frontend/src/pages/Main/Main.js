@@ -68,23 +68,24 @@ function Main() {
             <img src="/img/description1.jpg" alt="Opis firmy" />
           </div>
           <div className="main__description-text">
-            <h3>Marka NARAVE</h3>
+            <h3>Lorem ipsum</h3>
             <p>
-              powstała, by w obecnej erze plastiku powrócić do źródła i na nowo korzystać
-              z darów, które daje nam natura. Kierując się ideą{" "}
-              <strong>Slow Fashion / Slow Life</strong>, stawiamy na naturalne i
-              wysokojakościowe tkaniny. Produkujemy w Polsce z materiałów pochodzących od
-              sprawdzonych, polskich producentów.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus hic delectus
+              corrupti laudantium quibusdam molestias minima inventore, voluptate sapiente
+              ipsam qui aliquid quisquam accusamus sit autem, ut saepe culpa eveniet.
             </p>
           </div>
         </div>
         <div className="main__description-item">
-          <img src="/img/description2.jpg" alt="Opis firmy" />
+          <div className="main__description-img">
+            <img src="/img/description2.jpg" alt="Opis firmy" />
+          </div>
           <div className="main__description-text">
-            <h3>Dodatki</h3>
+            <h3>Lorem</h3>
             <p>
-              używane przy pakowaniu zamówień dobierane są w taki sposób, żeby jak
-              najbardziej odpowiadały naturalnym i ekologicznym założeniom marki.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+              officia eius dolorem quis, voluptatum aut ipsum perferendis iste dolore
+              deserunt aliquam quibusdam
             </p>
           </div>
         </div>

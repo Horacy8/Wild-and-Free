@@ -124,3 +124,33 @@ p.place-order-page__payment {
   font-weight: bold;
   font-size: calc(15px + (27 - 15) * ((100vw - 300px) / (1600 - 300)));
 }
+
+@media screen and (min-width: 1024px) {
+  .place-order-page__title {
+    font-size: 30px;
+  }
+  .place-order-page__name {
+    font-size: 24px;
+  }
+  .place-order-page p,
+  .place-order-page span {
+    font-size: 20px;
+  }
+
+  .place-order-page__product {
+    grid-template-columns: 0.3fr 1.5fr 0.8fr 0.8fr;
+  }
+
+  .place-order-page__total-price {
+    margin-top: 10rem;
+  }
+  .place-order-page__total-price span {
+    font-size: 22px;
+  }
+
+  .place-order-page__btn {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

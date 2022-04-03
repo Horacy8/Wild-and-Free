@@ -125,8 +125,8 @@ function ProductPage(props) {
               Produkt wyprzedany
             </button>
           )}
-          <ProductPageOptions product={product} />
         </div>
+        <ProductPageOptions product={product} />
       </div>
     </>
   );

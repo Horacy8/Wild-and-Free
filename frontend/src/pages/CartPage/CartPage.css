@@ -52,11 +52,6 @@
   flex-direction: column;
   margin-top: 3rem;
 }
-@media screen and (min-width: 1024px) {
-  .cart-page__columns {
-    flex-direction: row;
-  }
-}
 
 .cart-page__products {
   display: flex;
@@ -161,6 +156,46 @@
   margin-top: 4rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .cart-page__title {
+    font-size: 34px;
+  }
+  .cart-page__columns {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .cart-page__product {
+    grid-template-columns: 0.2fr 0.8fr 0.4fr;
+  }
+
+  .cart-page__quantity {
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+  .product-page__counter {
+    font-size: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .product-page__counter-wrapper {
+    width: 80px;
+  }
+
+  .product-page__counter-btn-minus,
+  .product-page__counter-btn-plus {
+    font-size: 16px;
+    padding: 0.8rem;
+  }
+
+  .cart-page__name,
+  .cart-page__size,
+  .cart-page__price {
+    font-size: 16px;
+  }
+}
+
 /* Kod rabatowy */
 
 .cart-page__discount-code {
@@ -220,6 +255,12 @@
   width: 80%;
 }
 
+@media screen and (min-width: 1024px) {
+  .cart-page-discount-code-btn {
+    font-size: 1.4rem;
+  }
+}
+
 /* Koszty */
 
 .cart-page__costs {
@@ -253,4 +294,15 @@
   font-family: var(--main-font-family);
   font-weight: bold;
   font-size: calc(15px + (27 - 15) * ((100vw - 300px) / (1600 - 300)));
+}
+
+@media screen and (min-width: 1024px) {
+  .cart-page__products-price,
+  .cart-page__delivery {
+    font-size: 16px;
+  }
+
+  .cart-page__subtotal {
+    font-size: 18px;
+  }
 }

@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Name } from "../../assets/icon/Nazwa.svg";
-import TopBar from "./TopBar/TopBar";
 import Basket from "./Basket/Basket";
 import Nav from "./Nav/Nav";
 import "./Header.css";
@@ -9,14 +7,11 @@ import "./Header.css";
 function Header() {
   return (
     <>
-      <TopBar />
       <header className="header">
         <Nav></Nav>
 
         <div className="header__logo">
-          <Link to="/">
-            <Name />
-          </Link>
+          <Link to="/">Wild & Free</Link>
         </div>
 
         <Basket></Basket>

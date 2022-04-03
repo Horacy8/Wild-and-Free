@@ -33,7 +33,7 @@ function ProductPageSlider(props) {
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={"auto"}
         freeMode={true}
         watchSlidesProgress={true}
         className="product-page__slider-bottom"

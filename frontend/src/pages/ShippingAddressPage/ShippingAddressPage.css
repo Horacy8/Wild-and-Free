@@ -85,15 +85,6 @@
   font-size: 0.9rem;
 }
 
-.shipping-address__info {
-  font-size: 1.1rem;
-}
-
-.shipping-address__info--center {
-  margin-top: 3rem;
-  text-align: center;
-}
-
 .shipping-address-page__input-wrapper-checkbox {
   display: flex;
   align-items: center;
@@ -127,4 +118,15 @@
 
 .shipping-addres-page__btn {
   margin-top: 4rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .shipping-address-page__title {
+    font-size: 30px;
+  }
+  .shipping-addres-page__btn {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

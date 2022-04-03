@@ -76,7 +76,7 @@ function ProductPageOptions(props) {
               : "product-page__dropdown"
           }
         >
-          <p className="product-page__dropdown-text">Ubrania mierzone na płasko:</p>
+          <p className="product-page__dropdown-text">Lorem ipsum dolor, sit amet</p>
           {product.dimensions.map((item) => (
             <>
               <strong className="product-page__dropdown-list-name">
@@ -92,9 +92,10 @@ function ProductPageOptions(props) {
             </>
           ))}
           <p className="product-page__dropdown-text">
-            Nasze ubrania szyjemy lokalnie, w Polsce w niewielkiej pracowni krawieckiej. Z
-            racji tego, iż każda rzecz odszywana jest ręcznie, wartości w tabeli wymiarów
-            mogą różnić się +/- 2 cm.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+            voluptatem mollitia sed ut dicta! Fugiat dolor deserunt rerum itaque
+            voluptatem? Facilis nobis dolor architecto labore rem distinctio deleniti,
+            assumenda aliquam?
           </p>
         </div>
       </li>
@@ -121,29 +122,26 @@ function ProductPageOptions(props) {
               : "product-page__dropdown"
           }
         >
-          <strong className="product-page__dropdown-list-name">Formy dostawy:</strong>
+          <strong className="product-page__dropdown-list-name">Lorem ipsum:</strong>
           <ul className="product-page__dropdown-list-wrapper">
-            <li className="product-page__dropdown-list-item">InPost Paczkomaty</li>
-            <li className="product-page__dropdown-list-item">InPost Kurier</li>
+            <li className="product-page__dropdown-list-item">Lorem ipsum - 30 zł</li>
+            <li className="product-page__dropdown-list-item">Lorem ipsum - 80 zł</li>
           </ul>
           <p className="product-page__dropdown-text">
-            Wysyłka w ciągu 1-3 dni roboczych (Poniedziałek - Piątek) od zaksięgowania
-            płatności.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis voluptas
+            maiores placeat
           </p>
-          <strong className="product-page__dropdown-list-name">Formy Płatności:</strong>
+          <strong className="product-page__dropdown-list-name">Lorem ipsum:</strong>
           <ul className="product-page__dropdown-list-wrapper">
-            <li className="product-page__dropdown-list-item">Płatności Online PayU</li>
-            <li className="product-page__dropdown-list-item">BLIK</li>
+            <li className="product-page__dropdown-list-item">Lorem ipsum</li>
+            <li className="product-page__dropdown-list-item">Lorem</li>
             <li className="product-page__dropdown-list-item">
-              Przelew na rachunek bankowy
+              Lorem ipsum dolor, sit amet
             </li>
           </ul>
           <p className="product-page__dropdown-text">
-            Nasze produkty szyjemy na bieżąco, dlatego w szczególnych przypadkach
-            realizacja zamówienia może się przedłóżyć do 7-14 dni roboczych.
-          </p>
-          <p className="product-page__dropdown-text">
-            Wysyłka zamówień tylko na terenie Polski.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, veritatis
+            repudiandae est voluptatibus at ea cupiditate, ius
           </p>
         </div>
       </li>

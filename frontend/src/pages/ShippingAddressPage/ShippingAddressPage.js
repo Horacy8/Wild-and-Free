@@ -5,11 +5,6 @@ import { saveShippingAddress } from "../../redux/features/cart/cartSlice";
 import Plant from "../../components/Plant/Plant";
 import "./ShippingAddressPage.css";
 
-// TODO ceny przy dostawach
-// TODO customowe powiadomienie o błędnym wpisaniu
-// TODO poprawić sprawdzenie poprawnosci wpisywania
-// TODO API InPosta, wybór paczkomatu na mapie
-
 function ShippingAddressPage(props) {
   const cart = useSelector((state) => state.cart);
   const { cartItems, shippingAddress } = cart;
@@ -215,7 +210,6 @@ function ShippingAddressPage(props) {
               E-mail
             </label>
           </div>
-          <p className="shipping-address__info">* Nie wystawiamy Faktur VAT</p>
           <div className="shipping-address-page__input-wrapper-checkbox">
             <input
               className="shipping-address-page__input-checkbox"

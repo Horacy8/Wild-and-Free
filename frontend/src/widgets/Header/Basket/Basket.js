@@ -16,7 +16,19 @@ function Basket() {
   const priceForAllProducts = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
 
   const [basketDropdown, setBasketDropdown] = useState(false);
-  const showBasket = () => setBasketDropdown(!basketDropdown);
+  const showBasket = () => {
+    if (!basketDropdown) {
+      setBasketDropdown(true);
+      document.body.style.overflow = "hidden";
+    } else {
+      setBasketDropdown(false);
+      document.body.style.overflow = "unset";
+    }
+  };
+
+  if (!basketDropdown) {
+    document.body.style.overflow = "unset";
+  }
 
   const dispatch = useDispatch();
   const removeFromCart = (_id, size) => {
@@ -63,6 +75,7 @@ function Basket() {
     let closeHandler = (e) => {
       if (!basketRef.current.contains(e.target)) {
         setBasketDropdown(false);
+        // document.body.style.overflow = "unset";
       }
     };
     document.addEventListener("mousedown", closeHandler);
@@ -72,13 +85,13 @@ function Basket() {
     };
   }, []);
 
-  // FIXME zatrzymanie otwierania koszyka po odświeżeniu
-
   const location = useLocation();
+  console.log(location.pathname);
   useEffect(() => {
     if (location.pathname.includes("produkt")) {
       if (cartItems.length !== 0) {
         setBasketDropdown(true);
+        document.body.style.overflow = "hidden";
       }
     }
   }, [cartItems]);
@@ -86,10 +99,27 @@ function Basket() {
   return (
     <>
       <div className="header__option">
-        <div className="header__basket" onClick={showBasket}>
-          <BasketIcon />
-          {cartItems.length ? <span className="header__basket-count">{allQty}</span> : ""}
-        </div>
+        {location.pathname === "/dane-adresowe" ||
+        location.pathname === "/podsumowanie" ||
+        location.pathname === "/koszyk" ? (
+          <div className="header__basket">
+            <BasketIcon />
+            {cartItems.length ? (
+              <span className="header__basket-count">{allQty}</span>
+            ) : (
+              ""
+            )}
+          </div>
+        ) : (
+          <div className="header__basket" onClick={showBasket}>
+            <BasketIcon />
+            {cartItems.length ? (
+              <span className="header__basket-count">{allQty}</span>
+            ) : (
+              ""
+            )}
+          </div>
+        )}
         <div
           ref={basketRef}
           className={
@@ -98,7 +128,6 @@ function Basket() {
         >
           {cartItems.length === 0 ? (
             <div className="header__basket-empty">
-              {/* <BasketIcon /> */}
               <EmptyBasketIcon />
               <h3 className="header__basket-empty-title">Twój koszyk jest pusty</h3>
               <p className="header__basket-empty-text">

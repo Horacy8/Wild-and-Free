@@ -6,6 +6,12 @@
   padding-bottom: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .footer {
+    margin-top: 8rem;
+  }
+}
+
 .footer__wrapper {
   display: flex;
   justify-content: center;
@@ -49,6 +55,12 @@
   font-weight: var(--header-font-weight);
   font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   letter-spacing: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__section-text h6 {
+    font-size: 17px;
+  }
 }
 
 .footer__section-icon {
@@ -102,6 +114,12 @@
   word-spacing: 1px;
 }
 
+@media screen and (min-width: 768px) {
+  .footer__section-list li a {
+    font-size: 15px;
+  }
+}
+
 /* FIND US */
 
 .footer__section--find-us {
@@ -132,4 +150,14 @@
   padding: 1rem;
   font-size: calc(22px + (34 - 22) * ((100vw - 300px) / (1600 - 300)));
   color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .footer__section--find-us h6 {
+    font-size: 17px;
+  }
+
+  .footer__section-fid-us-item a {
+    font-size: 24px;
+  }
 }

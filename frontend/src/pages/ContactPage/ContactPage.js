@@ -9,26 +9,19 @@ function ContactPage() {
       <Plant />
       <div className="contact-page__list">
         <p className="contact-page__text">
-          Masz do nas pytanie? Zapraszamy do kontaktu na adres e-mail lub na naszych
-          social mediach:
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae aperiam
         </p>
-        <a href="mailto:naravepl@gmail.com" className="contact-page__list-item">
+        <a href="mailto:example@example.com" className="contact-page__list-item">
           <i className="far fa-envelope"></i>
-          <span>naravepl@gmail.com</span>
+          <span>example@example.com</span>
         </a>
-        <a
-          href="https://www.instagram.com/narave_pl/"
-          className="contact-page__list-item"
-        >
+        <a href="#ig" className="contact-page__list-item">
           <i className="fab fa-instagram"></i>
-          <span>narave_pl</span>
+          <span>example</span>
         </a>
-        <a
-          href="https://www.facebook.com/NARAVEpl-101341795684552"
-          className="contact-page__list-item"
-        >
+        <a href="#fb" className="contact-page__list-item">
           <i className="fab fa-facebook-square"></i>
-          <span>NARAVE.pl</span>
+          <span>example</span>
         </a>
       </div>
     </div>

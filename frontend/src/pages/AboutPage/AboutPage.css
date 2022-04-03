@@ -13,6 +13,21 @@
   margin-top: 4rem;
 }
 
+@media screen and (min-width: 769px) {
+  .about-page {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .about-page__item {
+    margin-top: 6rem;
+  }
+
+  .about-page__item img {
+    width: 80%;
+  }
+}
+
 .about-page__item:nth-child(1) {
   margin-top: 0;
 }
@@ -32,6 +47,7 @@
   font-size: calc(24px + (36 - 24) * ((100vw - 300px) / (1600 - 300)));
   margin-top: 3rem;
 }
+
 .about-page__text h5 {
   margin-left: 5rem;
   font-size: calc(19px + (31 - 19) * ((100vw - 300px) / (1600 - 300)));
@@ -45,6 +61,24 @@
   margin-left: 5rem;
   margin-right: 4rem;
   list-style: disc;
+}
+
+@media screen and (min-width: 768px) {
+  .about-page__text {
+    margin-bottom: 6rem;
+  }
+  .about-page__text h5 {
+    margin-top: 6rem;
+    margin-left: 9rem;
+    font-weight: bold;
+  }
+  .about-page__list {
+    margin-left: 9rem;
+    margin-right: 8rem;
+  }
+  .about-page__list--accessories {
+    margin-top: 3rem;
+  }
 }
 
 .about-page__material-list {
@@ -74,17 +108,22 @@ p.about-page__text--hug {
   margin-top: 1.5rem;
 }
 
-p.about-page__text--narave {
-  margin-top: 0;
-}
+@media screen and (min-width: 1500px) {
+  .about-page__text h4 {
+    font-size: 36px;
+  }
+  .about-page__text h5 {
+    font-size: 28px;
+  }
 
-.about-page__span--bold {
-  font-weight: bold;
-}
+  .about-page__text p,
+  .about-page__list-item {
+    font-size: 20px;
+  }
 
-.about-page__span--hash {
-  font-weight: bold;
-  color: var(--accent-color);
+  .about-page__item img {
+    width: 50%;
+  }
 }
 
 /* PLANT */
@@ -104,4 +143,10 @@ p.about-page__text--narave {
 
 .about-page__text .plant__icon-wrapper .plant__line-right {
   margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .about-page__text .plant__icon-wrapper svg {
+    width: 25px;
+  }
 }
