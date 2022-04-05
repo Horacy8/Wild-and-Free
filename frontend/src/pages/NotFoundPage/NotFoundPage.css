@@ -1,0 +1,10 @@
+.not-found {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.not-fount__btn {
+  width: 100%;
+  margin: 0 auto;
+}

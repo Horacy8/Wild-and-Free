@@ -1,3 +1,4 @@
+import images from "./constants/images";
 const data = {
   products: [
     {
@@ -5,14 +6,7 @@ const data = {
       category: "sukienki",
       name: "Sukienka",
       price: 400,
-      image: [
-        "/img/dress.jpg",
-        "/img/dress.jpg",
-        "/img/dress.jpg",
-        "/img/dress.jpg",
-        "/img/dress.jpg",
-        "/img/dress.jpg",
-      ],
+      image: [images.dress, images.dress, images.dress, images.dress, images.dress],
       sizes: [
         { size: "XS", countInStock: 2 },
         { size: "S/M", countInStock: 15 },
@@ -77,12 +71,7 @@ const data = {
       category: "sukienki",
       name: "Sukienka pink",
       price: 150,
-      image: [
-        "/img/dress_pink.jpg",
-        "/img/dress_pink.jpg",
-        "/img/dress_pink.jpg",
-        "/img/dress_pink.jpg",
-      ],
+      image: [images.dressPink, images.dressPink, images.dressPink, images.dressPink],
       sizes: [
         { size: "XS", countInStock: 2 },
         { size: "S/M", countInStock: 5 },
@@ -153,10 +142,10 @@ const data = {
       name: "Bluza czarna",
       price: 699,
       image: [
-        "/img/hoodie_black.jpg",
-        "/img/hoodie_black.jpg",
-        "/img/hoodie_black.jpg",
-        "/img/hoodie_black.jpg",
+        images.hoodieBlack,
+        images.hoodieBlack,
+        images.hoodieBlack,
+        images.hoodieBlack,
       ],
       sizes: [
         { size: "XS", countInStock: 2 },
@@ -227,7 +216,7 @@ const data = {
       category: "spodnice",
       name: "Spódnica",
       price: 999,
-      image: ["/img/skirt.jpg", "/img/skirt.jpg", "/img/skirt.jpg", "/img/skirt.jpg"],
+      image: [images.skirt, images.skirt, images.skirt],
       sizes: [
         { size: "XS", countInStock: 2 },
         { size: "S/M", countInStock: 5 },
@@ -297,13 +286,7 @@ const data = {
       category: "spodnie",
       name: "Spodnie",
       price: 199,
-      image: [
-        "/img/pants.jpg",
-        "/img/pants.jpg",
-        "/img/pants.jpg",
-        "/img/pants.jpg",
-        "/img/pants.jpg",
-      ],
+      image: [images.pants, images.pants, images.pants, images.pants, images.pants],
       sizes: [
         { size: "XS", countInStock: 2 },
         { size: "S/M", countInStock: 5 },

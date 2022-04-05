@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../../data.js";
+import images from "../../constants/images.js";
 import Plant from "../../components/Plant/Plant.js";
 // import SwiperCore, { Pagination } from "swiper";
 import { Swiper } from "swiper/react/swiper.js";
@@ -25,7 +26,7 @@ function Main() {
       <div className="main__baner">
         <div className="main__baner-img">
           <img
-            src="./img/main.jpg"
+            src={images.main}
             alt="Zdjęcie banerowe"
             style={{ transform: `translateY(${offsetY * 0.5}px)` }}
           />
@@ -65,7 +66,7 @@ function Main() {
       <div className="main__description">
         <div className="main__description-item">
           <div className="main__description-img">
-            <img src="/img/description1.jpg" alt="Opis firmy" />
+            <img src={images.description1} alt="Opis firmy" />
           </div>
           <div className="main__description-text">
             <h3>Lorem ipsum</h3>
@@ -78,7 +79,7 @@ function Main() {
         </div>
         <div className="main__description-item">
           <div className="main__description-img">
-            <img src="/img/description2.jpg" alt="Opis firmy" />
+            <img src={images.description2} alt="Opis firmy" />
           </div>
           <div className="main__description-text">
             <h3>Lorem</h3>

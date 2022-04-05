@@ -1,4 +1,5 @@
 import React from "react";
+import images from "../../constants/images";
 import Plant from "../../components/Plant/Plant";
 import "./AboutPage.css";
 
@@ -15,7 +16,7 @@ function AboutPage() {
             quisquam?
           </p>
         </div>
-        <img src="/img/about1.jpg" alt="Opis firmy" />
+        <img src={images.about} alt="Opis firmy" />
       </div>
       <div className="about-page__item">
         <div className="about-page__text">

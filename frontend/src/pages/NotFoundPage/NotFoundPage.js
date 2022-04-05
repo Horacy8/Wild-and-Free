@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NotFoundPage.css";
 
 function NotFoundPage(props) {
   return (
     <div className="not-found">
-      <h4>Error 404 Strony nie znaleziono</h4>
+      <Link to="/">
+        <button className="btn not-fount__btn">Przejdź do strony głównej</button>
+      </Link>
     </div>
   );
 }
