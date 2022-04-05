@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/Wild-and-Free/static/css/main.64374324.chunk.css",
+    "main.js": "/Wild-and-Free/static/js/main.754199df.chunk.js",
+    "main.js.map": "/Wild-and-Free/static/js/main.754199df.chunk.js.map",
+    "runtime-main.js": "/Wild-and-Free/static/js/runtime-main.6f6fa509.js",
+    "runtime-main.js.map": "/Wild-and-Free/static/js/runtime-main.6f6fa509.js.map",
+    "static/css/2.16c9c180.chunk.css": "/Wild-and-Free/static/css/2.16c9c180.chunk.css",
+    "static/js/2.899d1710.chunk.js": "/Wild-and-Free/static/js/2.899d1710.chunk.js",
+    "static/js/2.899d1710.chunk.js.map": "/Wild-and-Free/static/js/2.899d1710.chunk.js.map",
+    "index.html": "/Wild-and-Free/index.html",
+    "static/css/2.16c9c180.chunk.css.map": "/Wild-and-Free/static/css/2.16c9c180.chunk.css.map",
+    "static/css/main.64374324.chunk.css.map": "/Wild-and-Free/static/css/main.64374324.chunk.css.map",
+    "static/js/2.899d1710.chunk.js.LICENSE.txt": "/Wild-and-Free/static/js/2.899d1710.chunk.js.LICENSE.txt",
+    "static/media/ArrowIcon.2013eede.svg": "/Wild-and-Free/static/media/ArrowIcon.2013eede.svg",
+    "static/media/CloseIcon.50693fea.svg": "/Wild-and-Free/static/media/CloseIcon.50693fea.svg",
+    "static/media/Dress.29cab462.svg": "/Wild-and-Free/static/media/Dress.29cab462.svg",
+    "static/media/Dumpster.e4b604d3.svg": "/Wild-and-Free/static/media/Dumpster.e4b604d3.svg",
+    "static/media/EmptyBagIcon.c4ffee68.svg": "/Wild-and-Free/static/media/EmptyBagIcon.c4ffee68.svg",
+    "static/media/HamburgerIcon.33c6ed39.svg": "/Wild-and-Free/static/media/HamburgerIcon.33c6ed39.svg",
+    "static/media/Hoodie.76714cd8.svg": "/Wild-and-Free/static/media/Hoodie.76714cd8.svg",
+    "static/media/Joggers.c469cbc6.svg": "/Wild-and-Free/static/media/Joggers.c469cbc6.svg",
+    "static/media/PlantIcon.ee47f272.svg": "/Wild-and-Free/static/media/PlantIcon.ee47f272.svg",
+    "static/media/Skirt.35e5a383.svg": "/Wild-and-Free/static/media/Skirt.35e5a383.svg",
+    "static/media/about1.93dc4bba.jpg": "/Wild-and-Free/static/media/about1.93dc4bba.jpg",
+    "static/media/description1.3db7cda6.jpg": "/Wild-and-Free/static/media/description1.3db7cda6.jpg",
+    "static/media/description2.85f436c8.JPG": "/Wild-and-Free/static/media/description2.85f436c8.JPG",
+    "static/media/dress.bc71fd71.jpg": "/Wild-and-Free/static/media/dress.bc71fd71.jpg",
+    "static/media/dress_pink.259e1bf9.jpg": "/Wild-and-Free/static/media/dress_pink.259e1bf9.jpg",
+    "static/media/hoodie_black.131fa08b.jpg": "/Wild-and-Free/static/media/hoodie_black.131fa08b.jpg",
+    "static/media/main.ad55bf8d.jpg": "/Wild-and-Free/static/media/main.ad55bf8d.jpg",
+    "static/media/pants.6b64e780.jpg": "/Wild-and-Free/static/media/pants.6b64e780.jpg",
+    "static/media/shoppingBag.426a118b.svg": "/Wild-and-Free/static/media/shoppingBag.426a118b.svg",
+    "static/media/skirt.d7b949a1.jpg": "/Wild-and-Free/static/media/skirt.d7b949a1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f6fa509.js",
+    "static/css/2.16c9c180.chunk.css",
+    "static/js/2.899d1710.chunk.js",
+    "static/css/main.64374324.chunk.css",
+    "static/js/main.754199df.chunk.js"
+  ]
+}
